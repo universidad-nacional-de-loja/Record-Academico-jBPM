@@ -5,7 +5,7 @@
   <bpmn2:itemDefinition id="_certificadoEducaFisicaItem" structureRef="org.jbpm.document.Document"/>
   <bpmn2:itemDefinition id="_certificadoPracticasPreItem" structureRef="org.jbpm.document.Document"/>
   <bpmn2:itemDefinition id="_derechoAcademicoItem" structureRef="org.jbpm.document.Document"/>
-  <bpmn2:itemDefinition id="_esEgresadoItem" structureRef="Boolean"/>
+  <bpmn2:itemDefinition id="_esGraduadoItem" structureRef="Boolean"/>
   <bpmn2:itemDefinition id="_esCorrectaDocumentacionItem" structureRef="Boolean"/>
   <bpmn2:itemDefinition id="_esCorrectoRecordAcademicoItem" structureRef="Boolean"/>
   <bpmn2:itemDefinition id="_comentarioItem" structureRef="String"/>
@@ -190,7 +190,7 @@
     <bpmn2:property id="certificadoEducaFisica" itemSubjectRef="_certificadoEducaFisicaItem" name="certificadoEducaFisica"/>
     <bpmn2:property id="certificadoPracticasPre" itemSubjectRef="_certificadoPracticasPreItem" name="certificadoPracticasPre"/>
     <bpmn2:property id="derechoAcademico" itemSubjectRef="_derechoAcademicoItem" name="derechoAcademico"/>
-    <bpmn2:property id="esEgresado" itemSubjectRef="_esEgresadoItem" name="esEgresado"/>
+    <bpmn2:property id="esGraduado" itemSubjectRef="_esGraduadoItem" name="esGraduado"/>
     <bpmn2:property id="esCorrectaDocumentacion" itemSubjectRef="_esCorrectaDocumentacionItem" name="esCorrectaDocumentacion"/>
     <bpmn2:property id="esCorrectoRecordAcademico" itemSubjectRef="_esCorrectoRecordAcademicoItem" name="esCorrectoRecordAcademico"/>
     <bpmn2:property id="comentario" itemSubjectRef="_comentarioItem" name="comentario"/>
@@ -205,7 +205,7 @@
           <drools:metaValue><![CDATA[Si]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="_tAXX8mvDEe2L35fQ0vYOUg" language="http://www.java.com/java"><![CDATA[return KieFunctions.isTrue(esEgresado);]]></bpmn2:conditionExpression>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="_tAXX8mvDEe2L35fQ0vYOUg" language="http://www.java.com/java"><![CDATA[return KieFunctions.isTrue(esGraduado);]]></bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="_727D6033-A4C1-4541-960A-A8C8A5FBB46A" sourceRef="_A038F37F-2E2A-47E2-B959-A056738D8396" targetRef="_7C054142-FEF5-4382-A6A9-78CA8BCBE431">
       <bpmn2:extensionElements>
@@ -247,7 +247,7 @@
           <drools:metaValue><![CDATA[No]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="_tAXX82vDEe2L35fQ0vYOUg" language="http://www.java.com/java"><![CDATA[return KieFunctions.isFalse(esEgresado);]]></bpmn2:conditionExpression>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="_tAXX82vDEe2L35fQ0vYOUg" language="http://www.java.com/java"><![CDATA[return KieFunctions.isFalse(esGraduado);]]></bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="_7435B65D-697B-429D-9B61-1A25AB4450C8" sourceRef="_F8CBA186-60C1-489A-9512-A558D6A00684" targetRef="_1BA2BB2C-F5B4-4232-9436-3FF1571B155C">
       <bpmn2:extensionElements>
@@ -321,12 +321,12 @@
       </bpmn2:extensionElements>
     </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="_2310D0D6-330D-4345-A755-600223C2FBAD" sourceRef="_FACA6437-8E91-4020-BB92-F33321E0421C" targetRef="_0981A2E4-79BE-473D-9AE4-394ACFEE7990"/>
-    <bpmn2:userTask id="_68F5D1A8-5105-42F9-9A01-10446200265D" name="Egresado Entrega Requisitos">
-      <bpmn2:documentation id="_tAXX-GvDEe2L35fQ0vYOUg"><![CDATA[El egresado entrega los requisitos correspondientes para generar el Récord Académico, estos son : 
+    <bpmn2:userTask id="_68F5D1A8-5105-42F9-9A01-10446200265D" name="Graduado Entrega Requisitos">
+      <bpmn2:documentation id="_tAXX-GvDEe2L35fQ0vYOUg"><![CDATA[El Graduado entrega los requisitos correspondientes para generar el Récord Académico, estos son : 
 solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería de la UNL )]]></bpmn2:documentation>
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
-          <drools:metaValue><![CDATA[Egresado Entrega Requisitos]]></drools:metaValue>
+          <drools:metaValue><![CDATA[Graduado Entrega Requisitos]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
       <bpmn2:incoming>_95A04334-1384-47CD-9EAD-B6D65B398CE3</bpmn2:incoming>
@@ -354,7 +354,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
       <bpmn2:dataInputAssociation id="_tAXX_GvDEe2L35fQ0vYOUg">
         <bpmn2:targetRef>_68F5D1A8-5105-42F9-9A01-10446200265D_TaskNameInputX</bpmn2:targetRef>
         <bpmn2:assignment id="_tAXX_WvDEe2L35fQ0vYOUg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_tAXX_mvDEe2L35fQ0vYOUg"><![CDATA[EgresadoEntregaRequisitos]]></bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_tAXX_mvDEe2L35fQ0vYOUg"><![CDATA[GraduadoEntregaRequisitos]]></bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_tAXX_2vDEe2L35fQ0vYOUg">_68F5D1A8-5105-42F9-9A01-10446200265D_TaskNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -478,10 +478,10 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
     </bpmn2:task>
-    <bpmn2:exclusiveGateway id="_B3D905AF-C05A-4DBC-9CA8-8962D5FEFB30" name="¿La persona que realiza el tramite es Egresado?" gatewayDirection="Diverging">
+    <bpmn2:exclusiveGateway id="_B3D905AF-C05A-4DBC-9CA8-8962D5FEFB30" name="¿La persona que realiza el tramite es Graduado?" gatewayDirection="Diverging">
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
-          <drools:metaValue><![CDATA[¿La persona que realiza el tramite es Egresado?]]></drools:metaValue>
+          <drools:metaValue><![CDATA[¿La persona que realiza el tramite es Graduado?]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
       <bpmn2:incoming>_1ACCE4A3-F6CC-44A3-AAB0-BE98A83086D8</bpmn2:incoming>
@@ -1002,7 +1002,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
       </bpmn2:potentialOwner>
     </bpmn2:userTask>
     <bpmn2:userTask id="_B3D4BDC4-F7A3-43EA-9465-1D8D09F8D57A" name="Recibir Récord Académico">
-      <bpmn2:documentation id="_tAX_ZmvDEe2L35fQ0vYOUg"><![CDATA[Una vez legalizado el Récord Académico esta listo para entregarse a la persona (estudiante, egresado) que empezó el tramite.
+      <bpmn2:documentation id="_tAX_ZmvDEe2L35fQ0vYOUg"><![CDATA[Una vez legalizado el Récord Académico esta listo para entregarse a la persona (estudiante, Graduado) que empezó el tramite.
 Se notificara por correo electrónico cada 48 horas para que ingrese y descargue el Récord Académico, y con ello finalice el proceso.]]></bpmn2:documentation>
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
@@ -1240,11 +1240,11 @@ Se notificara por correo electrónico cada 48 horas para que ingrese y descargue
       <bpmn2:outgoing>_1369A662-B77A-4D5B-B282-B858DF57E476</bpmn2:outgoing>
       <bpmn2:outgoing>_91075235-568C-410D-8F02-D60DC4824BB8</bpmn2:outgoing>
     </bpmn2:exclusiveGateway>
-    <bpmn2:userTask id="_1068C8DB-2AD4-4065-AC95-5680C5AAF36A" name="Revisar Documentación de Egresado">
+    <bpmn2:userTask id="_1068C8DB-2AD4-4065-AC95-5680C5AAF36A" name="Revisar Documentación de Graduado">
       <bpmn2:documentation id="_tAX_rGvDEe2L35fQ0vYOUg"><![CDATA[La secretaria de la Carrera de Ingeniería en Sistemas/Computación se encargada de revisar los documentos y de ser necesario puede enviar comentarios en el caso que los documentos no sean los correctos]]></bpmn2:documentation>
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
-          <drools:metaValue><![CDATA[Revisar Documentación de Egresado]]></drools:metaValue>
+          <drools:metaValue><![CDATA[Revisar Documentación de Graduado]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
       <bpmn2:incoming>_0F6CBEFD-1F4F-4ED0-9475-3790630B9981</bpmn2:incoming>
@@ -1274,7 +1274,7 @@ Se notificara por correo electrónico cada 48 horas para que ingrese y descargue
       <bpmn2:dataInputAssociation id="_tAX_sGvDEe2L35fQ0vYOUg">
         <bpmn2:targetRef>_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_TaskNameInputX</bpmn2:targetRef>
         <bpmn2:assignment id="_tAX_sWvDEe2L35fQ0vYOUg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_tAX_smvDEe2L35fQ0vYOUg"><![CDATA[RevisarDocumentacionEgresado]]></bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_tAX_smvDEe2L35fQ0vYOUg"><![CDATA[RevisarDocumentacionGraduado]]></bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_tAX_s2vDEe2L35fQ0vYOUg">_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_TaskNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>

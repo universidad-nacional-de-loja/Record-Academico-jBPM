@@ -1,10 +1,27 @@
 {
-    "id": "2a12d55e-d0ae-445f-a4f1-9212f063a208",
-    "name": "GenerarRecordAcademico-taskform.frm",
+    "id": "71edab09-1e33-43cf-8cce-504d2b6e4a6d",
+    "name": "RevisarDocumentacionGraduado-taskform.frm",
     "model": {
-        "taskName": "GenerarRecordAcademico",
+        "taskName": "RevisarDocumentacionGraduado",
         "processId": "Record-Academico.RecordAcademico",
+        "name": "task",
         "properties": [
+            {
+                "name": "derechoAcademico",
+                "typeInfo": {
+                    "type": "BASE",
+                    "className": "org.jbpm.document.Document",
+                    "multiple": false
+                },
+                "metaData": {
+                    "entries": [
+                        {
+                            "name": "field-readOnly",
+                            "value": true
+                        }
+                    ]
+                }
+            },
             {
                 "name": "solicitudRecordAcademico",
                 "typeInfo": {
@@ -22,26 +39,21 @@
                 }
             },
             {
-                "name": "sugerencia",
+                "name": "comentario",
                 "typeInfo": {
                     "type": "BASE",
                     "className": "java.lang.String",
                     "multiple": false
                 },
                 "metaData": {
-                    "entries": [
-                        {
-                            "name": "field-readOnly",
-                            "value": true
-                        }
-                    ]
+                    "entries": []
                 }
             },
             {
-                "name": "recordAcademico",
+                "name": "esCorrectaDocumentacion",
                 "typeInfo": {
                     "type": "BASE",
-                    "className": "org.jbpm.document.Document",
+                    "className": "java.lang.Boolean",
                     "multiple": false
                 },
                 "metaData": {
@@ -53,20 +65,20 @@
     },
     "fields": [
         {
-            "id": "field_435523279150418E11",
-            "name": "recordAcademico",
-            "label": "Récord Académico",
-            "required": true,
-            "readOnly": false,
+            "id": "field_3624104293045697E11",
+            "name": "derechoAcademico",
+            "label": "Derecho Académico",
+            "required": false,
+            "readOnly": true,
             "validateOnChange": true,
             "helpMessage": "",
-            "binding": "recordAcademico",
+            "binding": "derechoAcademico",
             "standaloneClassName": "org.jbpm.document.Document",
             "code": "Document",
             "serializedFieldClassName": "org.kie.workbench.common.forms.jbpm.model.authoring.document.definition.DocumentFieldDefinition"
         },
         {
-            "id": "field_823456313322736E11",
+            "id": "field_3225356941444941E12",
             "name": "solicitudRecordAcademico",
             "label": "Solicitud de Récord Académico",
             "required": false,
@@ -80,18 +92,43 @@
         },
         {
             "maxLength": 100,
-            "placeHolder": "Sugerencia",
-            "id": "field_3161858116389215E11",
-            "name": "sugerencia",
-            "label": "Sugerencia (Solo Lectura)",
+            "placeHolder": "Comentario (De ser documentación incorrecta, realice una retroalimentación)",
+            "id": "field_2273132256569387E12",
+            "name": "comentario",
+            "label": "Comentario",
             "required": false,
-            "readOnly": true,
+            "readOnly": false,
             "validateOnChange": true,
             "helpMessage": "",
-            "binding": "sugerencia",
+            "binding": "comentario",
             "standaloneClassName": "java.lang.String",
             "code": "TextBox",
             "serializedFieldClassName": "org.kie.workbench.common.forms.fields.shared.fieldTypes.basic.textBox.definition.TextBoxFieldDefinition"
+        },
+        {
+            "options": [
+                {
+                    "value": "true",
+                    "text": "Documentación Correcta"
+                },
+                {
+                    "value": "false",
+                    "text": "Documentación No esta Correcta"
+                }
+            ],
+            "inline": false,
+            "dataProvider": "",
+            "id": "field_9585",
+            "name": "esCorrectaDocumentacion",
+            "label": "¿La documentación recibida en el tramite es correcta?",
+            "required": true,
+            "readOnly": false,
+            "validateOnChange": true,
+            "helpMessage": "",
+            "binding": "esCorrectaDocumentacion",
+            "standaloneClassName": "java.lang.String",
+            "code": "RadioGroup",
+            "serializedFieldClassName": "org.kie.workbench.common.forms.fields.shared.fieldTypes.basic.selectors.radioGroup.definition.StringRadioGroupFieldDefinition"
         }
     ],
     "layoutTemplate": {
@@ -112,28 +149,7 @@
                             {
                                 "dragTypeName": "org.uberfire.ext.plugin.client.perspective.editor.layout.editor.HTMLLayoutDragComponent",
                                 "properties": {
-                                    "HTML_CODE": "\u003ch1 style\u003d\"text-align: center;\"\u003eRécord Académico\u003c/h1\u003e"
-                                },
-                                "parts": []
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "height": "12",
-                "properties": {},
-                "layoutColumns": [
-                    {
-                        "span": "12",
-                        "height": "12",
-                        "properties": {},
-                        "rows": [],
-                        "layoutComponents": [
-                            {
-                                "dragTypeName": "org.uberfire.ext.plugin.client.perspective.editor.layout.editor.HTMLLayoutDragComponent",
-                                "properties": {
-                                    "HTML_CODE": "\u003ch2\u003eDocumentación Recibida\u003c/h2\u003e"
+                                    "HTML_CODE": "\n\n\u003c!--StartFragment--\u003e\u003ch1 style\u003d\"text-align: center;\"\u003eRécord Académico Graduado\u003c/h1\u003e\u003c!--EndFragment--\u003e\n\n"
                                 },
                                 "parts": []
                             }
@@ -154,8 +170,8 @@
                             {
                                 "dragTypeName": "org.kie.workbench.common.forms.editor.client.editor.rendering.EditorFieldLayoutComponent",
                                 "properties": {
-                                    "field_id": "field_823456313322736E11",
-                                    "form_id": "2a12d55e-d0ae-445f-a4f1-9212f063a208"
+                                    "field_id": "field_3624104293045697E11",
+                                    "form_id": "71edab09-1e33-43cf-8cce-504d2b6e4a6d"
                                 },
                                 "parts": [
                                     {
@@ -181,12 +197,60 @@
                             {
                                 "dragTypeName": "org.kie.workbench.common.forms.editor.client.editor.rendering.EditorFieldLayoutComponent",
                                 "properties": {
-                                    "field_id": "field_3161858116389215E11",
-                                    "form_id": "2a12d55e-d0ae-445f-a4f1-9212f063a208"
+                                    "field_id": "field_3225356941444941E12",
+                                    "form_id": "71edab09-1e33-43cf-8cce-504d2b6e4a6d"
                                 },
                                 "parts": [
                                     {
-                                        "partId": "TextBox",
+                                        "partId": "Field Label",
+                                        "cssProperties": {}
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "height": "12",
+                "properties": {},
+                "layoutColumns": [
+                    {
+                        "span": "12",
+                        "height": "12",
+                        "properties": {},
+                        "rows": [],
+                        "layoutComponents": [
+                            {
+                                "dragTypeName": "org.uberfire.ext.plugin.client.perspective.editor.layout.editor.HTMLLayoutDragComponent",
+                                "properties": {
+                                    "HTML_CODE": "\n\n\u003c!--StartFragment--\u003e\u003ch2\u003eRevisión del Tramite de Récord Académico\u003c/h2\u003e\u003c!--EndFragment--\u003e\n\n"
+                                },
+                                "parts": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "height": "12",
+                "properties": {},
+                "layoutColumns": [
+                    {
+                        "span": "12",
+                        "height": "12",
+                        "properties": {},
+                        "rows": [],
+                        "layoutComponents": [
+                            {
+                                "dragTypeName": "org.kie.workbench.common.forms.editor.client.editor.rendering.EditorFieldLayoutComponent",
+                                "properties": {
+                                    "field_id": "field_9585",
+                                    "form_id": "71edab09-1e33-43cf-8cce-504d2b6e4a6d"
+                                },
+                                "parts": [
+                                    {
+                                        "partId": "RadioGroup",
                                         "cssProperties": {}
                                     },
                                     {
@@ -210,33 +274,16 @@
                         "rows": [],
                         "layoutComponents": [
                             {
-                                "dragTypeName": "org.uberfire.ext.plugin.client.perspective.editor.layout.editor.HTMLLayoutDragComponent",
-                                "properties": {
-                                    "HTML_CODE": "\u003ch2\u003eGenerar Récord Académico\u003c/h2\u003e"
-                                },
-                                "parts": []
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "height": "12",
-                "properties": {},
-                "layoutColumns": [
-                    {
-                        "span": "12",
-                        "height": "12",
-                        "properties": {},
-                        "rows": [],
-                        "layoutComponents": [
-                            {
                                 "dragTypeName": "org.kie.workbench.common.forms.editor.client.editor.rendering.EditorFieldLayoutComponent",
                                 "properties": {
-                                    "field_id": "field_435523279150418E11",
-                                    "form_id": "2a12d55e-d0ae-445f-a4f1-9212f063a208"
+                                    "field_id": "field_2273132256569387E12",
+                                    "form_id": "71edab09-1e33-43cf-8cce-504d2b6e4a6d"
                                 },
                                 "parts": [
+                                    {
+                                        "partId": "TextBox",
+                                        "cssProperties": {}
+                                    },
                                     {
                                         "partId": "Field Label",
                                         "cssProperties": {}
