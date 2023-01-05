@@ -157,7 +157,7 @@
             "options": [
                 {
                     "value": "false",
-                    "text": "Estudiante"
+                    "text": "Egresado"
                 },
                 {
                     "value": "true",

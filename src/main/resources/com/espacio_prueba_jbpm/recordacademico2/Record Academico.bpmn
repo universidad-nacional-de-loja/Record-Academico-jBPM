@@ -179,7 +179,7 @@
   <bpmn2:itemDefinition id="__68F5D1A8-5105-42F9-9A01-10446200265D_solicitudRecordAcademicoOutputXItem" structureRef="org.jbpm.document.Document"/>
   <bpmn2:itemDefinition id="__68F5D1A8-5105-42F9-9A01-10446200265D_derechoAcademicoOutputXItem" structureRef="org.jbpm.document.Document"/>
   <bpmn2:process id="Record-Academico.RecordAcademico" drools:packageName="com.cis_c.record_academico" drools:version="1.0" drools:adHoc="false" name="RecordAcademico" isExecutable="true" processType="Public">
-    <bpmn2:documentation id="_tAXX8WvDEe2L35fQ0vYOUg"><![CDATA[Proceso de Récord Académico: es una documento en le que se detalla toda la información de las notas en los diferentes ciclos del estudiante]]></bpmn2:documentation>
+    <bpmn2:documentation id="_tAXX8WvDEe2L35fQ0vYOUg"><![CDATA[Proceso de Récord Académico: es una documento en le que se detalla toda la información de las notas en los diferentes ciclos del Egresado]]></bpmn2:documentation>
     <bpmn2:extensionElements>
       <drools:metaData name="customDescription">
         <drools:metaValue><![CDATA[Proceso para obtener el Récord Académico]]></drools:metaValue>
@@ -809,11 +809,11 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
       <bpmn2:incoming>_B8C168DA-89BC-491A-943C-CBABFE163C0A</bpmn2:incoming>
       <bpmn2:outgoing>_1ACCE4A3-F6CC-44A3-AAB0-BE98A83086D8</bpmn2:outgoing>
     </bpmn2:exclusiveGateway>
-    <bpmn2:userTask id="_BC464F8D-4BED-4EF1-8887-9D01CA81EF73" name="Revisar Documentación de Estudiante">
+    <bpmn2:userTask id="_BC464F8D-4BED-4EF1-8887-9D01CA81EF73" name="Revisar Documentación de Egresado">
       <bpmn2:documentation id="_tAX_LWvDEe2L35fQ0vYOUg"><![CDATA[La secretaria de la Carrera de Ingeniería en Sistemas/Computación se encargada de revisar los documentos y de ser necesario puede enviar comentarios en el caso que los documentos no sean los correctos]]></bpmn2:documentation>
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
-          <drools:metaValue><![CDATA[Revisar Documentación de Estudiante]]></drools:metaValue>
+          <drools:metaValue><![CDATA[Revisar Documentación de Egresado]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
       <bpmn2:incoming>_B152622B-A932-465C-A7CB-FE6F00462C45</bpmn2:incoming>
@@ -847,7 +847,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
       <bpmn2:dataInputAssociation id="_tAX_MWvDEe2L35fQ0vYOUg">
         <bpmn2:targetRef>_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_TaskNameInputX</bpmn2:targetRef>
         <bpmn2:assignment id="_tAX_MmvDEe2L35fQ0vYOUg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_tAX_M2vDEe2L35fQ0vYOUg"><![CDATA[RevisarDocumentacionEstudiante]]></bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_tAX_M2vDEe2L35fQ0vYOUg"><![CDATA[RevisarDocumentacionEgresado]]></bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_tAX_NGvDEe2L35fQ0vYOUg">_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_TaskNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -905,11 +905,11 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
       </bpmn2:extensionElements>
       <bpmn2:outgoing>_B8C168DA-89BC-491A-943C-CBABFE163C0A</bpmn2:outgoing>
     </bpmn2:startEvent>
-    <bpmn2:userTask id="_2A3F9959-9136-4660-BC6E-A3424850FE2B" name="Estudiante Entrega Requisitos">
-      <bpmn2:documentation id="_tAX_R2vDEe2L35fQ0vYOUg"><![CDATA[El estudiante entrega los requisitos correspondientes para generar el Récord Académico, los cuales son solicitud Récord Académico, certificado Idiomas, certificado de Educación Física, certificado Practicas Preprofesionales]]></bpmn2:documentation>
+    <bpmn2:userTask id="_2A3F9959-9136-4660-BC6E-A3424850FE2B" name="Egresado Entrega Requisitos">
+      <bpmn2:documentation id="_tAX_R2vDEe2L35fQ0vYOUg"><![CDATA[El Egresado entrega los requisitos correspondientes para generar el Récord Académico, los cuales son solicitud Récord Académico, certificado Idiomas, certificado de Educación Física, certificado Practicas Preprofesionales]]></bpmn2:documentation>
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
-          <drools:metaValue><![CDATA[Estudiante Entrega Requisitos]]></drools:metaValue>
+          <drools:metaValue><![CDATA[Egresado Entrega Requisitos]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
       <bpmn2:incoming>_D55C49F0-C128-423B-BC04-EAE64C0BD086</bpmn2:incoming>
@@ -943,7 +943,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
       <bpmn2:dataInputAssociation id="_tAX_S2vDEe2L35fQ0vYOUg">
         <bpmn2:targetRef>_2A3F9959-9136-4660-BC6E-A3424850FE2B_TaskNameInputX</bpmn2:targetRef>
         <bpmn2:assignment id="_tAX_TGvDEe2L35fQ0vYOUg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_tAX_TWvDEe2L35fQ0vYOUg"><![CDATA[EstudianteEntregaRequisitos]]></bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_tAX_TWvDEe2L35fQ0vYOUg"><![CDATA[EgresadoEntregaRequisitos]]></bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_tAX_TmvDEe2L35fQ0vYOUg">_2A3F9959-9136-4660-BC6E-A3424850FE2B_TaskNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -961,7 +961,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
       <bpmn2:dataInputAssociation id="_tAX_VGvDEe2L35fQ0vYOUg">
         <bpmn2:targetRef>_2A3F9959-9136-4660-BC6E-A3424850FE2B_CommentInputX</bpmn2:targetRef>
         <bpmn2:assignment id="_tAX_VWvDEe2L35fQ0vYOUg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_tAX_VmvDEe2L35fQ0vYOUg"><![CDATA[Estudiante sube PDFs]]></bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_tAX_VmvDEe2L35fQ0vYOUg"><![CDATA[Egresado sube PDFs]]></bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_tAX_V2vDEe2L35fQ0vYOUg">_2A3F9959-9136-4660-BC6E-A3424850FE2B_CommentInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -1002,7 +1002,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
       </bpmn2:potentialOwner>
     </bpmn2:userTask>
     <bpmn2:userTask id="_B3D4BDC4-F7A3-43EA-9465-1D8D09F8D57A" name="Recibir Récord Académico">
-      <bpmn2:documentation id="_tAX_ZmvDEe2L35fQ0vYOUg"><![CDATA[Una vez legalizado el Récord Académico esta listo para entregarse a la persona (estudiante, Graduado) que empezó el tramite.
+      <bpmn2:documentation id="_tAX_ZmvDEe2L35fQ0vYOUg"><![CDATA[Una vez legalizado el Récord Académico esta listo para entregarse a la persona (Egresado, Graduado) que empezó el tramite.
 Se notificara por correo electrónico cada 48 horas para que ingrese y descargue el Récord Académico, y con ello finalice el proceso.]]></bpmn2:documentation>
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">

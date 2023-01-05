@@ -1,8 +1,8 @@
 {
     "id": "e210a8c1-6bd3-4fe0-950e-33233a594697",
-    "name": "EstudianteEntregaRequisitos-taskform.frm",
+    "name": "EgresadoEntregaRequisitos-taskform.frm",
     "model": {
-        "taskName": "EstudianteEntregaRequisitos",
+        "taskName": "EgresadoEntregaRequisitos",
         "processId": "Record-Academico.RecordAcademico",
         "name": "task",
         "properties": [
@@ -156,7 +156,7 @@
                             {
                                 "dragTypeName": "org.uberfire.ext.plugin.client.perspective.editor.layout.editor.HTMLLayoutDragComponent",
                                 "properties": {
-                                    "HTML_CODE": "\u003ch1 style\u003d\"text-align: center;\"\u003eEstudiante\u003c/h1\u003e"
+                                    "HTML_CODE": "\u003ch1 style\u003d\"text-align: center;\"\u003eEgresado\u003c/h1\u003e"
                                 },
                                 "parts": []
                             }
