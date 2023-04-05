@@ -25,7 +25,7 @@ public class FormularioBean {
     }
     
     public void procesarFormulario() {
-        // L�gica de negocio para procesar el formulario
+        // Logica de negocio para procesar el formulario
     }
     
 }
