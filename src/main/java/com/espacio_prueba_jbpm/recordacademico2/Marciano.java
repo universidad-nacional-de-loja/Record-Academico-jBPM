@@ -14,8 +14,11 @@ public class Marciano implements java.io.Serializable {
 	@javax.persistence.SequenceGenerator(name = "MARCIANO_ID_GENERATOR", sequenceName = "MARCIANO_ID_SEQ")
 	private java.lang.Long id;
 
-	@org.kie.api.definition.type.Label(value = "Nombre")
+	@org.kie.api.definition.type.Label("Nombre")
 	private java.lang.String name;
+
+	@org.kie.api.definition.type.Label(value = "Documento")
+	private byte[] documento;
 
 	public Marciano() {
 	}
@@ -36,9 +39,18 @@ public class Marciano implements java.io.Serializable {
 		this.name = name;
 	}
 
-	public Marciano(java.lang.Long id, java.lang.String name) {
+	public byte[] getDocumento() {
+		return this.documento;
+	}
+
+	public void setDocumento(byte[] documento) {
+		this.documento = documento;
+	}
+
+	public Marciano(java.lang.Long id, java.lang.String name, byte documento) {
 		this.id = id;
 		this.name = name;
+		this.documento = documento;
 	}
 
 }
