@@ -47,7 +47,7 @@ public class Marciano implements java.io.Serializable {
 		this.documento = documento;
 	}
 
-	public Marciano(java.lang.Long id, java.lang.String name, byte documento) {
+	public Marciano(java.lang.Long id, java.lang.String name, byte[] documento) {
 		this.id = id;
 		this.name = name;
 		this.documento = documento;
