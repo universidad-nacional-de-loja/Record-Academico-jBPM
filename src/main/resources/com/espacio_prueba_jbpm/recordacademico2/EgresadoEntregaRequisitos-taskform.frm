@@ -74,7 +74,7 @@
       "id": "field_272888137546296E11",
       "name": "solicitudRecordAcademico",
       "label": "Solicitud de Récord Académico",
-      "rendered":"#{processInstance.variables[esGraduado]}",
+      "rendered":"#{kcontext.getVariable('esGraduado')}",
       "required": true,
       "readOnly": false,
       "validateOnChange": true,
