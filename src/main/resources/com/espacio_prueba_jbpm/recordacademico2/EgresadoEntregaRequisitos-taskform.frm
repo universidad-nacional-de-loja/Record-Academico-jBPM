@@ -74,7 +74,7 @@
       "id": "field_272888137546296E11",
       "name": "solicitudRecordAcademico",
       "label": "Solicitud de Récord Académico",
-      "rendered":"#{esGraduado}",
+      "rendered":"#{processInstance.variables[esGraduado]}",
       "required": true,
       "readOnly": false,
       "validateOnChange": true,

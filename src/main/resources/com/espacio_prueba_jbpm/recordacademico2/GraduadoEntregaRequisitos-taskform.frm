@@ -89,7 +89,7 @@
       "id": "field_0031450820241642E12",
       "name": "solicitudRecordAcademico",
       "label": "Solicitud de Récord Académico",
-      "required": "#{esGraduado ? true : false}",
+      "required": "#{processInstance.variables['esGraduado']}",
       "readOnly": false,
       "validateOnChange": true,
       "helpMessage": "Solicitud para pedir que se realice el tramite de Récord Académico",
