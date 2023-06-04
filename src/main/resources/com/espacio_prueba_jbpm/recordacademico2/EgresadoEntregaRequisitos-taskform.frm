@@ -75,6 +75,7 @@
       "name": "solicitudRecordAcademico",
       "label": "Solicitud de Récord Académico",
       "required": "#{esGraduado}",
+      "visible": "#{esGraduado}",
       "readOnly": false,
       "validateOnChange": true,
       "helpMessage": "Solicitud para pedir que se realice el tramite de Récord Académico",
