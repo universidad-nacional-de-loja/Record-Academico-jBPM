@@ -74,7 +74,7 @@
       "id": "field_272888137546296E11",
       "name": "solicitudRecordAcademico",
       "label": "Solicitud de Récord Académico",
-      "required": "#{esGraduado}",
+      "required": "#{not(esGraduado)}",
       "readOnly": "#{not(esGraduado)}",
       "validateOnChange": true,
       "helpMessage": "Solicitud para pedir que se realice el tramite de Récord Académico",
