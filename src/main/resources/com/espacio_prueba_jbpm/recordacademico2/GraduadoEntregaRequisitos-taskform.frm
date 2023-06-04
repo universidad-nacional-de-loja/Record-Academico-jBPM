@@ -92,7 +92,7 @@
       "required": "#{kcontext.getProcessInstance().getVariable('esGraduado')}",
       "readOnly": false,
       "validateOnChange": true,
-      "helpMessage": "Solicitud para pedir que se realice el tramite de Récord Académico",
+      "helpMessage": "Solicitud para pedir que se realice el tramite de Récord Académico +#{esGraduado}+",
       "binding": "solicitudRecordAcademico",
       "standaloneClassName": "org.jbpm.document.Document",
       "code": "Document",
