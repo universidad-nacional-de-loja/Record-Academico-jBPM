@@ -75,8 +75,7 @@
       "name": "solicitudRecordAcademico",
       "label": "Solicitud de Récord Académico",
       "required": "#{esGraduado}",
-      "class": "campo-condicional",
-      "readOnly": false,
+      "readOnly": "#{!esGraduado}",
       "validateOnChange": true,
       "helpMessage": "Solicitud para pedir que se realice el tramite de Récord Académico",
       "binding": "solicitudRecordAcademico",
@@ -288,11 +287,7 @@
                     "partId": "Field Label",
                     "cssProperties": {}
                   }
-                ],
-                "styles": {
-                  "stylesId": "estilosEjemplo",
-                  "content": "<styles>\n  <style><![CDATA[\n    .campo-condicional[#{esGraduado}=\"true\"] {\n      display: none;\n    }\n  ]]></style>\n</styles>"
-                }
+                ]
               }
             ]
           }
