@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_1LFbMANkEe6ssOa6OKTjIg" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_DC770ANlEe6ssOa6OKTjIg" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
   <bpmn2:itemDefinition id="_solicitudRecordAcademicoItem" structureRef="org.jbpm.document.Document"/>
   <bpmn2:itemDefinition id="_certificadoIdiomasItem" structureRef="org.jbpm.document.Document"/>
   <bpmn2:itemDefinition id="_certificadoEducaFisicaItem" structureRef="org.jbpm.document.Document"/>
@@ -19,7 +19,7 @@
   <bpmn2:itemDefinition id="_nombresItem" structureRef="String"/>
   <bpmn2:itemDefinition id="_anioComienzoItem" structureRef="Integer"/>
   <bpmn2:itemDefinition id="_informacionItem" structureRef="String"/>
-  <bpmn2:itemDefinition id="_pdfGeneradoItem" structureRef="org.jbpm.document.Document"/>
+  <bpmn2:itemDefinition id="_solicitudGeneradaPDFItem" structureRef="org.jbpm.document.Document"/>
   <bpmn2:itemDefinition id="__1068C8DB-2AD4-4065-AC95-5680C5AAF36A_SkippableInputXItem" structureRef="Object"/>
   <bpmn2:itemDefinition id="__1068C8DB-2AD4-4065-AC95-5680C5AAF36A_PriorityInputXItem" structureRef="Object"/>
   <bpmn2:itemDefinition id="__1068C8DB-2AD4-4065-AC95-5680C5AAF36A_CommentInputXItem" structureRef="Object"/>
@@ -233,7 +233,7 @@
   <bpmn2:itemDefinition id="__68F5D1A8-5105-42F9-9A01-10446200265D_copiaCedulaOutputXItem" structureRef="org.jbpm.document.Document"/>
   <bpmn2:itemDefinition id="__68F5D1A8-5105-42F9-9A01-10446200265D_anioComienzoOutputXItem" structureRef="Integer"/>
   <bpmn2:process id="Record-Academico.RecordAcademico" drools:packageName="com.cis_c.record_academico" drools:version="1.0" drools:adHoc="false" name="RecordAcademico" isExecutable="true" processType="Public">
-    <bpmn2:documentation id="_1LFbMQNkEe6ssOa6OKTjIg"><![CDATA[Proceso de Récord Académico: es una documento en le que se detalla toda la información de las notas en los diferentes ciclos del Egresado]]></bpmn2:documentation>
+    <bpmn2:documentation id="_DC770QNlEe6ssOa6OKTjIg"><![CDATA[Proceso de Récord Académico: es una documento en le que se detalla toda la información de las notas en los diferentes ciclos del Egresado]]></bpmn2:documentation>
     <bpmn2:extensionElements>
       <drools:metaData name="customDescription">
         <drools:metaValue><![CDATA[Proceso para obtener el Récord Académico]]></drools:metaValue>
@@ -258,7 +258,7 @@
     <bpmn2:property id="nombres" itemSubjectRef="_nombresItem" name="nombres"/>
     <bpmn2:property id="anioComienzo" itemSubjectRef="_anioComienzoItem" name="anioComienzo"/>
     <bpmn2:property id="informacion" itemSubjectRef="_informacionItem" name="informacion"/>
-    <bpmn2:property id="pdfGenerado" itemSubjectRef="_pdfGeneradoItem" name="pdfGenerado"/>
+    <bpmn2:property id="solicitudGeneradaPDF" itemSubjectRef="_solicitudGeneradaPDFItem" name="solicitudGeneradaPDF"/>
     <bpmn2:sequenceFlow id="_F0974921-1000-43B7-8565-F2E74BD7DD74" sourceRef="_1B2FAD9D-9545-443D-95C1-2B943D1BE11A" targetRef="_A038F37F-2E2A-47E2-B959-A056738D8396"/>
     <bpmn2:sequenceFlow id="_6D833423-34B4-45E8-BACC-ABAF791DB773" name="Si" sourceRef="_B3D905AF-C05A-4DBC-9CA8-8962D5FEFB30" targetRef="_68F5D1A8-5105-42F9-9A01-10446200265D">
       <bpmn2:extensionElements>
@@ -266,7 +266,7 @@
           <drools:metaValue><![CDATA[Si]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="_1LFbMgNkEe6ssOa6OKTjIg" language="http://www.java.com/java"><![CDATA[return KieFunctions.isTrue(esGraduado);]]></bpmn2:conditionExpression>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="_DC770gNlEe6ssOa6OKTjIg" language="http://www.java.com/java"><![CDATA[return KieFunctions.isTrue(esGraduado);]]></bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="_727D6033-A4C1-4541-960A-A8C8A5FBB46A" sourceRef="_A038F37F-2E2A-47E2-B959-A056738D8396" targetRef="_7C054142-FEF5-4382-A6A9-78CA8BCBE431">
       <bpmn2:extensionElements>
@@ -338,7 +338,7 @@
           <drools:metaValue><![CDATA[Si]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="_1LFbMwNkEe6ssOa6OKTjIg" language="http://www.java.com/java"><![CDATA[return KieFunctions.isTrue(esCorrectaDocumentacion);]]></bpmn2:conditionExpression>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="_DC770wNlEe6ssOa6OKTjIg" language="http://www.java.com/java"><![CDATA[return KieFunctions.isTrue(esCorrectaDocumentacion);]]></bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="_B0CD9727-2595-4331-BED4-17A9DF8DE678" name="No" sourceRef="_E54DE2E1-F7F8-4C27-A2FC-E19D6A1BADAE" targetRef="_6DF6EBC0-09FD-469C-B5DB-D57B48E16FF3">
       <bpmn2:extensionElements>
@@ -346,7 +346,7 @@
           <drools:metaValue><![CDATA[No]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="_1LFbNANkEe6ssOa6OKTjIg" language="http://www.java.com/java"><![CDATA[return KieFunctions.isFalse(esCorrectaDocumentacion);]]></bpmn2:conditionExpression>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="_DC771ANlEe6ssOa6OKTjIg" language="http://www.java.com/java"><![CDATA[return KieFunctions.isFalse(esCorrectaDocumentacion);]]></bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="_2AC690AA-CF15-4369-8370-1A44187FD5F1" sourceRef="_77318072-C5A5-47C2-B1BD-248421613180" targetRef="_E54DE2E1-F7F8-4C27-A2FC-E19D6A1BADAE"/>
     <bpmn2:sequenceFlow id="_F1DCC0CC-3733-43C1-8941-B8477F4F2F22" sourceRef="_B5F5FB92-9B0F-4176-AA4F-AB6BF1F811DB" targetRef="_2A3F9959-9136-4660-BC6E-A3424850FE2B"/>
@@ -356,7 +356,7 @@
           <drools:metaValue><![CDATA[No]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="_1LFbNQNkEe6ssOa6OKTjIg" language="http://www.java.com/java"><![CDATA[return KieFunctions.isFalse(esGraduado);]]></bpmn2:conditionExpression>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="_DC771QNlEe6ssOa6OKTjIg" language="http://www.java.com/java"><![CDATA[return KieFunctions.isFalse(esGraduado);]]></bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="_91075235-568C-410D-8F02-D60DC4824BB8" name="No" sourceRef="_B6E242BC-BB60-4328-9A30-81160CEC380F" targetRef="_5C0F0A41-FB03-45A0-BE68-DB9B2BE0B346">
       <bpmn2:extensionElements>
@@ -364,7 +364,7 @@
           <drools:metaValue><![CDATA[No]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="_1LFbNgNkEe6ssOa6OKTjIg" language="http://www.java.com/java"><![CDATA[return KieFunctions.isFalse(esCorrectoRecordAcademico);]]></bpmn2:conditionExpression>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="_DC771gNlEe6ssOa6OKTjIg" language="http://www.java.com/java"><![CDATA[return KieFunctions.isFalse(esCorrectoRecordAcademico);]]></bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="_1369A662-B77A-4D5B-B282-B858DF57E476" name="Si" sourceRef="_B6E242BC-BB60-4328-9A30-81160CEC380F" targetRef="_11543EDF-BCF0-4867-B3B0-0C715CED07DF">
       <bpmn2:extensionElements>
@@ -372,7 +372,7 @@
           <drools:metaValue><![CDATA[Si]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="_1LFbNwNkEe6ssOa6OKTjIg" language="http://www.java.com/java"><![CDATA[return KieFunctions.isTrue(esCorrectoRecordAcademico);]]></bpmn2:conditionExpression>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="_DC771wNlEe6ssOa6OKTjIg" language="http://www.java.com/java"><![CDATA[return KieFunctions.isTrue(esCorrectoRecordAcademico);]]></bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="_8E383BA5-8A2E-484C-9491-DF8CDEC83ECE" sourceRef="_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC" targetRef="_B6E242BC-BB60-4328-9A30-81160CEC380F"/>
     <bpmn2:sequenceFlow id="_A6C523B1-2FFC-4680-8D4B-3F484ACA038D" sourceRef="_1068C8DB-2AD4-4065-AC95-5680C5AAF36A" targetRef="_77318072-C5A5-47C2-B1BD-248421613180"/>
@@ -390,7 +390,7 @@
     </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="_2310D0D6-330D-4345-A755-600223C2FBAD" sourceRef="_FACA6437-8E91-4020-BB92-F33321E0421C" targetRef="_0981A2E4-79BE-473D-9AE4-394ACFEE7990"/>
     <bpmn2:userTask id="_68F5D1A8-5105-42F9-9A01-10446200265D" name="Graduado Entrega Requisitos">
-      <bpmn2:documentation id="_1LFbOANkEe6ssOa6OKTjIg"><![CDATA[El Graduado entrega los requisitos correspondientes para generar el Récord Académico, estos son : 
+      <bpmn2:documentation id="_DC772ANlEe6ssOa6OKTjIg"><![CDATA[El Graduado entrega los requisitos correspondientes para generar el Récord Académico, estos son : 
 solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería de la UNL )]]></bpmn2:documentation>
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
@@ -399,7 +399,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
       </bpmn2:extensionElements>
       <bpmn2:incoming>_6D833423-34B4-45E8-BACC-ABAF791DB773</bpmn2:incoming>
       <bpmn2:outgoing>_0F6CBEFD-1F4F-4ED0-9475-3790630B9981</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_1LFbOQNkEe6ssOa6OKTjIg">
+      <bpmn2:ioSpecification id="_DC772QNlEe6ssOa6OKTjIg">
         <bpmn2:dataInput id="_68F5D1A8-5105-42F9-9A01-10446200265D_TaskNameInputX" drools:dtype="Object" itemSubjectRef="__68F5D1A8-5105-42F9-9A01-10446200265D_TaskNameInputXItem" name="TaskName"/>
         <bpmn2:dataInput id="_68F5D1A8-5105-42F9-9A01-10446200265D_comentarioInputX" drools:dtype="String" itemSubjectRef="__68F5D1A8-5105-42F9-9A01-10446200265D_comentarioInputXItem" name="comentario"/>
         <bpmn2:dataInput id="_68F5D1A8-5105-42F9-9A01-10446200265D_SkippableInputX" drools:dtype="Object" itemSubjectRef="__68F5D1A8-5105-42F9-9A01-10446200265D_SkippableInputXItem" name="Skippable"/>
@@ -409,76 +409,76 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
         <bpmn2:dataOutput id="_68F5D1A8-5105-42F9-9A01-10446200265D_derechoAcademicoOutputX" drools:dtype="org.jbpm.document.Document" itemSubjectRef="__68F5D1A8-5105-42F9-9A01-10446200265D_derechoAcademicoOutputXItem" name="derechoAcademico"/>
         <bpmn2:dataOutput id="_68F5D1A8-5105-42F9-9A01-10446200265D_copiaCedulaOutputX" drools:dtype="org.jbpm.document.Document" itemSubjectRef="__68F5D1A8-5105-42F9-9A01-10446200265D_copiaCedulaOutputXItem" name="copiaCedula"/>
         <bpmn2:dataOutput id="_68F5D1A8-5105-42F9-9A01-10446200265D_anioComienzoOutputX" drools:dtype="Integer" itemSubjectRef="__68F5D1A8-5105-42F9-9A01-10446200265D_anioComienzoOutputXItem" name="anioComienzo"/>
-        <bpmn2:inputSet id="_1LFbOgNkEe6ssOa6OKTjIg">
+        <bpmn2:inputSet id="_DC772gNlEe6ssOa6OKTjIg">
           <bpmn2:dataInputRefs>_68F5D1A8-5105-42F9-9A01-10446200265D_TaskNameInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_68F5D1A8-5105-42F9-9A01-10446200265D_comentarioInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_68F5D1A8-5105-42F9-9A01-10446200265D_SkippableInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_68F5D1A8-5105-42F9-9A01-10446200265D_DescriptionInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_68F5D1A8-5105-42F9-9A01-10446200265D_CreatedByInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="_1LFbOwNkEe6ssOa6OKTjIg">
+        <bpmn2:outputSet id="_DC772wNlEe6ssOa6OKTjIg">
           <bpmn2:dataOutputRefs>_68F5D1A8-5105-42F9-9A01-10446200265D_solicitudRecordAcademicoOutputX</bpmn2:dataOutputRefs>
           <bpmn2:dataOutputRefs>_68F5D1A8-5105-42F9-9A01-10446200265D_derechoAcademicoOutputX</bpmn2:dataOutputRefs>
           <bpmn2:dataOutputRefs>_68F5D1A8-5105-42F9-9A01-10446200265D_copiaCedulaOutputX</bpmn2:dataOutputRefs>
           <bpmn2:dataOutputRefs>_68F5D1A8-5105-42F9-9A01-10446200265D_anioComienzoOutputX</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_1LFbPANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC773ANlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_68F5D1A8-5105-42F9-9A01-10446200265D_TaskNameInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFbPQNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFbPgNkEe6ssOa6OKTjIg"><![CDATA[GraduadoEntregaRequisitos]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFbPwNkEe6ssOa6OKTjIg">_68F5D1A8-5105-42F9-9A01-10446200265D_TaskNameInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC773QNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC773gNlEe6ssOa6OKTjIg"><![CDATA[GraduadoEntregaRequisitos]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC773wNlEe6ssOa6OKTjIg">_68F5D1A8-5105-42F9-9A01-10446200265D_TaskNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFbQANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC774ANlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>comentario</bpmn2:sourceRef>
         <bpmn2:targetRef>_68F5D1A8-5105-42F9-9A01-10446200265D_comentarioInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFbQQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC774QNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_68F5D1A8-5105-42F9-9A01-10446200265D_SkippableInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFbQgNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFbQwNkEe6ssOa6OKTjIg"><![CDATA[false]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFbRANkEe6ssOa6OKTjIg">_68F5D1A8-5105-42F9-9A01-10446200265D_SkippableInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC774gNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC774wNlEe6ssOa6OKTjIg"><![CDATA[false]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC775ANlEe6ssOa6OKTjIg">_68F5D1A8-5105-42F9-9A01-10446200265D_SkippableInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFbRQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC775QNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_68F5D1A8-5105-42F9-9A01-10446200265D_DescriptionInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFbRgNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFbRwNkEe6ssOa6OKTjIg"><![CDATA[Entregar los Requisitos Correspondientes]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFbSANkEe6ssOa6OKTjIg">_68F5D1A8-5105-42F9-9A01-10446200265D_DescriptionInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC775gNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC775wNlEe6ssOa6OKTjIg"><![CDATA[Entregar los Requisitos Correspondientes]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC776ANlEe6ssOa6OKTjIg">_68F5D1A8-5105-42F9-9A01-10446200265D_DescriptionInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFbSQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC776QNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_68F5D1A8-5105-42F9-9A01-10446200265D_CreatedByInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFbSgNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFbSwNkEe6ssOa6OKTjIg"><![CDATA[${initiator}]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFbTANkEe6ssOa6OKTjIg">_68F5D1A8-5105-42F9-9A01-10446200265D_CreatedByInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC776gNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC776wNlEe6ssOa6OKTjIg"><![CDATA[${initiator}]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC777ANlEe6ssOa6OKTjIg">_68F5D1A8-5105-42F9-9A01-10446200265D_CreatedByInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataOutputAssociation id="_1LFbTQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataOutputAssociation id="_DC777QNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>_68F5D1A8-5105-42F9-9A01-10446200265D_solicitudRecordAcademicoOutputX</bpmn2:sourceRef>
         <bpmn2:targetRef>solicitudRecordAcademico</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
-      <bpmn2:dataOutputAssociation id="_1LFbTgNkEe6ssOa6OKTjIg">
+      <bpmn2:dataOutputAssociation id="_DC777gNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>_68F5D1A8-5105-42F9-9A01-10446200265D_derechoAcademicoOutputX</bpmn2:sourceRef>
         <bpmn2:targetRef>derechoAcademico</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
-      <bpmn2:dataOutputAssociation id="_1LFbTwNkEe6ssOa6OKTjIg">
+      <bpmn2:dataOutputAssociation id="_DC777wNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>_68F5D1A8-5105-42F9-9A01-10446200265D_copiaCedulaOutputX</bpmn2:sourceRef>
         <bpmn2:targetRef>copiaCedula</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
-      <bpmn2:dataOutputAssociation id="_1LFbUANkEe6ssOa6OKTjIg">
+      <bpmn2:dataOutputAssociation id="_DC778ANlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>_68F5D1A8-5105-42F9-9A01-10446200265D_anioComienzoOutputX</bpmn2:sourceRef>
         <bpmn2:targetRef>anioComienzo</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
-      <bpmn2:potentialOwner id="_b2922669-f309-46a2-9fd4-4080883fda09">
-        <bpmn2:resourceAssignmentExpression id="_1LFbUQNkEe6ssOa6OKTjIg">
-          <bpmn2:formalExpression id="_1LFbUgNkEe6ssOa6OKTjIg">#{initiator}</bpmn2:formalExpression>
+      <bpmn2:potentialOwner id="_b9bfefe7-cb73-4362-bfe7-5405b4e4c5ab">
+        <bpmn2:resourceAssignmentExpression id="_DC778QNlEe6ssOa6OKTjIg">
+          <bpmn2:formalExpression id="_DC778gNlEe6ssOa6OKTjIg">#{initiator}</bpmn2:formalExpression>
         </bpmn2:resourceAssignmentExpression>
       </bpmn2:potentialOwner>
     </bpmn2:userTask>
     <bpmn2:task id="_A038F37F-2E2A-47E2-B959-A056738D8396" drools:taskName="Email" name="Notificar Cancelacion Tramite">
-      <bpmn2:documentation id="_1LFbUwNkEe6ssOa6OKTjIg"><![CDATA[jbpm-workitems-email/index.html]]></bpmn2:documentation>
+      <bpmn2:documentation id="_DC778wNlEe6ssOa6OKTjIg"><![CDATA[jbpm-workitems-email/index.html]]></bpmn2:documentation>
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
           <drools:metaValue><![CDATA[Notificar Cancelacion Tramite]]></drools:metaValue>
@@ -486,7 +486,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
       </bpmn2:extensionElements>
       <bpmn2:incoming>_F0974921-1000-43B7-8565-F2E74BD7DD74</bpmn2:incoming>
       <bpmn2:outgoing>_727D6033-A4C1-4541-960A-A8C8A5FBB46A</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_1LFbVANkEe6ssOa6OKTjIg">
+      <bpmn2:ioSpecification id="_DC779ANlEe6ssOa6OKTjIg">
         <bpmn2:dataInput id="_A038F37F-2E2A-47E2-B959-A056738D8396_FromInputX" drools:dtype="String" itemSubjectRef="__A038F37F-2E2A-47E2-B959-A056738D8396_FromInputXItem" name="From"/>
         <bpmn2:dataInput id="_A038F37F-2E2A-47E2-B959-A056738D8396_ToInputX" drools:dtype="String" itemSubjectRef="__A038F37F-2E2A-47E2-B959-A056738D8396_ToInputXItem" name="To"/>
         <bpmn2:dataInput id="_A038F37F-2E2A-47E2-B959-A056738D8396_SubjectInputX" drools:dtype="String" itemSubjectRef="__A038F37F-2E2A-47E2-B959-A056738D8396_SubjectInputXItem" name="Subject"/>
@@ -499,7 +499,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
         <bpmn2:dataInput id="_A038F37F-2E2A-47E2-B959-A056738D8396_DebugInputX" drools:dtype="String" itemSubjectRef="__A038F37F-2E2A-47E2-B959-A056738D8396_DebugInputXItem" name="Debug"/>
         <bpmn2:dataInput id="_A038F37F-2E2A-47E2-B959-A056738D8396_Reply-ToInputX" drools:dtype="String" itemSubjectRef="__A038F37F-2E2A-47E2-B959-A056738D8396_Reply-ToInputXItem" name="Reply-To"/>
         <bpmn2:dataInput id="_A038F37F-2E2A-47E2-B959-A056738D8396_TaskNameInputX" drools:dtype="Object" name="TaskName"/>
-        <bpmn2:inputSet id="_1LFbVQNkEe6ssOa6OKTjIg">
+        <bpmn2:inputSet id="_DC779QNlEe6ssOa6OKTjIg">
           <bpmn2:dataInputRefs>_A038F37F-2E2A-47E2-B959-A056738D8396_FromInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_A038F37F-2E2A-47E2-B959-A056738D8396_ToInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_A038F37F-2E2A-47E2-B959-A056738D8396_SubjectInputX</bpmn2:dataInputRefs>
@@ -513,45 +513,45 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
           <bpmn2:dataInputRefs>_A038F37F-2E2A-47E2-B959-A056738D8396_Reply-ToInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_A038F37F-2E2A-47E2-B959-A056738D8396_TaskNameInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="_1LFbVgNkEe6ssOa6OKTjIg"/>
+        <bpmn2:outputSet id="_DC779gNlEe6ssOa6OKTjIg"/>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_1LFbVwNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC779wNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_A038F37F-2E2A-47E2-B959-A056738D8396_FromInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFbWANkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFbWQNkEe6ssOa6OKTjIg"><![CDATA[direccion.cis@unl.edu.ec]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFbWgNkEe6ssOa6OKTjIg">_A038F37F-2E2A-47E2-B959-A056738D8396_FromInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC77-ANlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC77-QNlEe6ssOa6OKTjIg"><![CDATA[direccion.cis@unl.edu.ec]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC77-gNlEe6ssOa6OKTjIg">_A038F37F-2E2A-47E2-B959-A056738D8396_FromInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFbWwNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC77-wNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_A038F37F-2E2A-47E2-B959-A056738D8396_ToInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFbXANkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFbXQNkEe6ssOa6OKTjIg"><![CDATA[#{initiator}@email.com]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFbXgNkEe6ssOa6OKTjIg">_A038F37F-2E2A-47E2-B959-A056738D8396_ToInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC77_ANlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC77_QNlEe6ssOa6OKTjIg"><![CDATA[#{initiator}@email.com]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC77_gNlEe6ssOa6OKTjIg">_A038F37F-2E2A-47E2-B959-A056738D8396_ToInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFbXwNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC77_wNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_A038F37F-2E2A-47E2-B959-A056738D8396_SubjectInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFbYANkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFbYQNkEe6ssOa6OKTjIg"><![CDATA[Tramite de Récord Académico Cancelado]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFbYgNkEe6ssOa6OKTjIg">_A038F37F-2E2A-47E2-B959-A056738D8396_SubjectInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC78AANlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC78AQNlEe6ssOa6OKTjIg"><![CDATA[Tramite de Récord Académico Cancelado]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC78AgNlEe6ssOa6OKTjIg">_A038F37F-2E2A-47E2-B959-A056738D8396_SubjectInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFbYwNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC78AwNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_A038F37F-2E2A-47E2-B959-A056738D8396_TemplateInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFbZANkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFbZQNkEe6ssOa6OKTjIg"><![CDATA[Plantilla Cancelacion]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFbZgNkEe6ssOa6OKTjIg">_A038F37F-2E2A-47E2-B959-A056738D8396_TemplateInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC78BANlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC78BQNlEe6ssOa6OKTjIg"><![CDATA[Plantilla Cancelacion]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC78BgNlEe6ssOa6OKTjIg">_A038F37F-2E2A-47E2-B959-A056738D8396_TemplateInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFbZwNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC78BwNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>initiator</bpmn2:sourceRef>
         <bpmn2:targetRef>_A038F37F-2E2A-47E2-B959-A056738D8396_initiatorInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFbaANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC78CANlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_A038F37F-2E2A-47E2-B959-A056738D8396_TaskNameInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFbaQNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFbagNkEe6ssOa6OKTjIg"><![CDATA[Email]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFbawNkEe6ssOa6OKTjIg">_A038F37F-2E2A-47E2-B959-A056738D8396_TaskNameInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC78CQNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC78CgNlEe6ssOa6OKTjIg"><![CDATA[Email]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC78CwNlEe6ssOa6OKTjIg">_A038F37F-2E2A-47E2-B959-A056738D8396_TaskNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
     </bpmn2:task>
@@ -584,7 +584,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
       </bpmn2:extensionElements>
       <bpmn2:incoming>_26245D14-B83A-4C74-B19D-1A81414B1513</bpmn2:incoming>
       <bpmn2:outgoing>_8E383BA5-8A2E-484C-9491-DF8CDEC83ECE</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_1LFbbANkEe6ssOa6OKTjIg">
+      <bpmn2:ioSpecification id="_DC78DANlEe6ssOa6OKTjIg">
         <bpmn2:dataInput id="_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_TaskNameInputX" drools:dtype="Object" itemSubjectRef="__D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_TaskNameInputXItem" name="TaskName"/>
         <bpmn2:dataInput id="_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_recordAcademicoInputX" drools:dtype="org.jbpm.document.Document" itemSubjectRef="__D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_recordAcademicoInputXItem" name="recordAcademico"/>
         <bpmn2:dataInput id="_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_informacionInputX" drools:dtype="String" itemSubjectRef="__D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_informacionInputXItem" name="informacion"/>
@@ -594,7 +594,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
         <bpmn2:dataOutput id="_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_recordAcademicoLegalizadoOutputX" drools:dtype="org.jbpm.document.Document" itemSubjectRef="__D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_recordAcademicoLegalizadoOutputXItem" name="recordAcademicoLegalizado"/>
         <bpmn2:dataOutput id="_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_esCorrectoRecordAcademicoOutputX" drools:dtype="Boolean" itemSubjectRef="__D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_esCorrectoRecordAcademicoOutputXItem" name="esCorrectoRecordAcademico"/>
         <bpmn2:dataOutput id="_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_sugerenciaOutputX" drools:dtype="String" itemSubjectRef="__D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_sugerenciaOutputXItem" name="sugerencia"/>
-        <bpmn2:inputSet id="_1LFbbQNkEe6ssOa6OKTjIg">
+        <bpmn2:inputSet id="_DC78DQNlEe6ssOa6OKTjIg">
           <bpmn2:dataInputRefs>_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_TaskNameInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_recordAcademicoInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_informacionInputX</bpmn2:dataInputRefs>
@@ -602,63 +602,63 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
           <bpmn2:dataInputRefs>_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_GroupIdInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_DescriptionInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="_1LFbbgNkEe6ssOa6OKTjIg">
+        <bpmn2:outputSet id="_DC78DgNlEe6ssOa6OKTjIg">
           <bpmn2:dataOutputRefs>_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_recordAcademicoLegalizadoOutputX</bpmn2:dataOutputRefs>
           <bpmn2:dataOutputRefs>_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_esCorrectoRecordAcademicoOutputX</bpmn2:dataOutputRefs>
           <bpmn2:dataOutputRefs>_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_sugerenciaOutputX</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_1LFbbwNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC78DwNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_TaskNameInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFbcANkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFbcQNkEe6ssOa6OKTjIg"><![CDATA[LegalizarRecordAcademico]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFbcgNkEe6ssOa6OKTjIg">_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_TaskNameInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC78EANlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC78EQNlEe6ssOa6OKTjIg"><![CDATA[LegalizarRecordAcademico]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC78EgNlEe6ssOa6OKTjIg">_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_TaskNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFbcwNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC78EwNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>recordAcademico</bpmn2:sourceRef>
         <bpmn2:targetRef>_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_recordAcademicoInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFbdANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC78FANlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>informacion</bpmn2:sourceRef>
         <bpmn2:targetRef>_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_informacionInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFbdQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC78FQNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_SkippableInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFbdgNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFbdwNkEe6ssOa6OKTjIg"><![CDATA[false]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFbeANkEe6ssOa6OKTjIg">_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_SkippableInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC78FgNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC78FwNlEe6ssOa6OKTjIg"><![CDATA[false]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC78GANlEe6ssOa6OKTjIg">_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_SkippableInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFbeQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC78GQNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_GroupIdInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFbegNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFbewNkEe6ssOa6OKTjIg"><![CDATA[Administrativo-Facultad-FEIRNNR]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFbfANkEe6ssOa6OKTjIg">_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_GroupIdInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC78GgNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC78GwNlEe6ssOa6OKTjIg"><![CDATA[Administrativo-Facultad-FEIRNNR]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC78HANlEe6ssOa6OKTjIg">_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_GroupIdInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFbfQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC78HQNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_DescriptionInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFbfgNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFbfwNkEe6ssOa6OKTjIg"><![CDATA[Legalizar Récord Académico de #{initiator}]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFbgANkEe6ssOa6OKTjIg">_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_DescriptionInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC78HgNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC78HwNlEe6ssOa6OKTjIg"><![CDATA[Legalizar Récord Académico de #{initiator}]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC78IANlEe6ssOa6OKTjIg">_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_DescriptionInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataOutputAssociation id="_1LFbgQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataOutputAssociation id="_DC78IQNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_recordAcademicoLegalizadoOutputX</bpmn2:sourceRef>
         <bpmn2:targetRef>recordAcademicoLegalizado</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
-      <bpmn2:dataOutputAssociation id="_1LFbggNkEe6ssOa6OKTjIg">
+      <bpmn2:dataOutputAssociation id="_DC78IgNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_esCorrectoRecordAcademicoOutputX</bpmn2:sourceRef>
         <bpmn2:targetRef>esCorrectoRecordAcademico</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
-      <bpmn2:dataOutputAssociation id="_1LFbgwNkEe6ssOa6OKTjIg">
+      <bpmn2:dataOutputAssociation id="_DC78IwNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC_sugerenciaOutputX</bpmn2:sourceRef>
         <bpmn2:targetRef>sugerencia</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
     </bpmn2:userTask>
     <bpmn2:task id="_0981A2E4-79BE-473D-9AE4-394ACFEE7990" drools:taskName="Email" name="Notificar Cancelacion Tramite">
-      <bpmn2:documentation id="_1LFbhANkEe6ssOa6OKTjIg"><![CDATA[jbpm-workitems-email/index.html]]></bpmn2:documentation>
+      <bpmn2:documentation id="_DC78JANlEe6ssOa6OKTjIg"><![CDATA[jbpm-workitems-email/index.html]]></bpmn2:documentation>
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
           <drools:metaValue><![CDATA[Notificar Cancelacion Tramite]]></drools:metaValue>
@@ -666,7 +666,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
       </bpmn2:extensionElements>
       <bpmn2:incoming>_2310D0D6-330D-4345-A755-600223C2FBAD</bpmn2:incoming>
       <bpmn2:outgoing>_B59BBE84-0544-46E5-A16C-41A8F3E7B4F1</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_1LFbhQNkEe6ssOa6OKTjIg">
+      <bpmn2:ioSpecification id="_DC78JQNlEe6ssOa6OKTjIg">
         <bpmn2:dataInput id="_0981A2E4-79BE-473D-9AE4-394ACFEE7990_FromInputX" drools:dtype="String" itemSubjectRef="__0981A2E4-79BE-473D-9AE4-394ACFEE7990_FromInputXItem" name="From"/>
         <bpmn2:dataInput id="_0981A2E4-79BE-473D-9AE4-394ACFEE7990_ToInputX" drools:dtype="String" itemSubjectRef="__0981A2E4-79BE-473D-9AE4-394ACFEE7990_ToInputXItem" name="To"/>
         <bpmn2:dataInput id="_0981A2E4-79BE-473D-9AE4-394ACFEE7990_SubjectInputX" drools:dtype="String" itemSubjectRef="__0981A2E4-79BE-473D-9AE4-394ACFEE7990_SubjectInputXItem" name="Subject"/>
@@ -679,7 +679,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
         <bpmn2:dataInput id="_0981A2E4-79BE-473D-9AE4-394ACFEE7990_DebugInputX" drools:dtype="String" itemSubjectRef="__0981A2E4-79BE-473D-9AE4-394ACFEE7990_DebugInputXItem" name="Debug"/>
         <bpmn2:dataInput id="_0981A2E4-79BE-473D-9AE4-394ACFEE7990_Reply-ToInputX" drools:dtype="String" itemSubjectRef="__0981A2E4-79BE-473D-9AE4-394ACFEE7990_Reply-ToInputXItem" name="Reply-To"/>
         <bpmn2:dataInput id="_0981A2E4-79BE-473D-9AE4-394ACFEE7990_TaskNameInputX" drools:dtype="Object" name="TaskName"/>
-        <bpmn2:inputSet id="_1LFbhgNkEe6ssOa6OKTjIg">
+        <bpmn2:inputSet id="_DC78JgNlEe6ssOa6OKTjIg">
           <bpmn2:dataInputRefs>_0981A2E4-79BE-473D-9AE4-394ACFEE7990_FromInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_0981A2E4-79BE-473D-9AE4-394ACFEE7990_ToInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_0981A2E4-79BE-473D-9AE4-394ACFEE7990_SubjectInputX</bpmn2:dataInputRefs>
@@ -693,45 +693,45 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
           <bpmn2:dataInputRefs>_0981A2E4-79BE-473D-9AE4-394ACFEE7990_Reply-ToInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_0981A2E4-79BE-473D-9AE4-394ACFEE7990_TaskNameInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="_1LFbhwNkEe6ssOa6OKTjIg"/>
+        <bpmn2:outputSet id="_DC78JwNlEe6ssOa6OKTjIg"/>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_1LFbiANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC78KANlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_0981A2E4-79BE-473D-9AE4-394ACFEE7990_FromInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFbiQNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFbigNkEe6ssOa6OKTjIg"><![CDATA[direccion.cis@unl.edu.ec]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFbiwNkEe6ssOa6OKTjIg">_0981A2E4-79BE-473D-9AE4-394ACFEE7990_FromInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC78KQNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC78KgNlEe6ssOa6OKTjIg"><![CDATA[direccion.cis@unl.edu.ec]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC78KwNlEe6ssOa6OKTjIg">_0981A2E4-79BE-473D-9AE4-394ACFEE7990_FromInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFbjANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC78LANlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_0981A2E4-79BE-473D-9AE4-394ACFEE7990_ToInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFbjQNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFbjgNkEe6ssOa6OKTjIg"><![CDATA[#{initiator}@email.com]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFbjwNkEe6ssOa6OKTjIg">_0981A2E4-79BE-473D-9AE4-394ACFEE7990_ToInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC78LQNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC78LgNlEe6ssOa6OKTjIg"><![CDATA[#{initiator}@email.com]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC78LwNlEe6ssOa6OKTjIg">_0981A2E4-79BE-473D-9AE4-394ACFEE7990_ToInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFbkANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC78MANlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_0981A2E4-79BE-473D-9AE4-394ACFEE7990_SubjectInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFbkQNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFbkgNkEe6ssOa6OKTjIg"><![CDATA[Tramite de Récord Académico Cancelado]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFbkwNkEe6ssOa6OKTjIg">_0981A2E4-79BE-473D-9AE4-394ACFEE7990_SubjectInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC78MQNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC78MgNlEe6ssOa6OKTjIg"><![CDATA[Tramite de Récord Académico Cancelado]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC78MwNlEe6ssOa6OKTjIg">_0981A2E4-79BE-473D-9AE4-394ACFEE7990_SubjectInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFblANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC78NANlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_0981A2E4-79BE-473D-9AE4-394ACFEE7990_TemplateInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFblQNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFblgNkEe6ssOa6OKTjIg"><![CDATA[Plantilla Cancelacion]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFblwNkEe6ssOa6OKTjIg">_0981A2E4-79BE-473D-9AE4-394ACFEE7990_TemplateInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC78NQNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC78NgNlEe6ssOa6OKTjIg"><![CDATA[Plantilla Cancelacion]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC78NwNlEe6ssOa6OKTjIg">_0981A2E4-79BE-473D-9AE4-394ACFEE7990_TemplateInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFbmANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC78OANlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>initiator</bpmn2:sourceRef>
         <bpmn2:targetRef>_0981A2E4-79BE-473D-9AE4-394ACFEE7990_initiatorInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFbmQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC78OQNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_0981A2E4-79BE-473D-9AE4-394ACFEE7990_TaskNameInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFbmgNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFbmwNkEe6ssOa6OKTjIg"><![CDATA[Email]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFbnANkEe6ssOa6OKTjIg">_0981A2E4-79BE-473D-9AE4-394ACFEE7990_TaskNameInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC78OgNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC78OwNlEe6ssOa6OKTjIg"><![CDATA[Email]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC78PANlEe6ssOa6OKTjIg">_0981A2E4-79BE-473D-9AE4-394ACFEE7990_TaskNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
     </bpmn2:task>
@@ -740,10 +740,10 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
     </bpmn2:endEvent>
     <bpmn2:endEvent id="_7C054142-FEF5-4382-A6A9-78CA8BCBE431">
       <bpmn2:incoming>_727D6033-A4C1-4541-960A-A8C8A5FBB46A</bpmn2:incoming>
-      <bpmn2:terminateEventDefinition id="_1LFbnQNkEe6ssOa6OKTjIg"/>
+      <bpmn2:terminateEventDefinition id="_DC78PQNlEe6ssOa6OKTjIg"/>
     </bpmn2:endEvent>
     <bpmn2:task id="_C303A43E-D02C-46F9-9820-7ABEC8CDFD05" drools:taskName="Email" name="Enviar Notificacion Recordatorio">
-      <bpmn2:documentation id="_1LFbngNkEe6ssOa6OKTjIg"><![CDATA[jbpm-workitems-email/index.html]]></bpmn2:documentation>
+      <bpmn2:documentation id="_DC78PgNlEe6ssOa6OKTjIg"><![CDATA[jbpm-workitems-email/index.html]]></bpmn2:documentation>
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
           <drools:metaValue><![CDATA[Enviar Notificacion Recordatorio]]></drools:metaValue>
@@ -751,7 +751,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
       </bpmn2:extensionElements>
       <bpmn2:incoming>_4770F79E-C155-44AB-AA5E-82DCD5629323</bpmn2:incoming>
       <bpmn2:outgoing>_507E499A-0451-41F8-B269-59E1D3B96825</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_1LFbnwNkEe6ssOa6OKTjIg">
+      <bpmn2:ioSpecification id="_DC78PwNlEe6ssOa6OKTjIg">
         <bpmn2:dataInput id="_C303A43E-D02C-46F9-9820-7ABEC8CDFD05_FromInputX" drools:dtype="String" itemSubjectRef="__C303A43E-D02C-46F9-9820-7ABEC8CDFD05_FromInputXItem" name="From"/>
         <bpmn2:dataInput id="_C303A43E-D02C-46F9-9820-7ABEC8CDFD05_ToInputX" drools:dtype="String" itemSubjectRef="__C303A43E-D02C-46F9-9820-7ABEC8CDFD05_ToInputXItem" name="To"/>
         <bpmn2:dataInput id="_C303A43E-D02C-46F9-9820-7ABEC8CDFD05_SubjectInputX" drools:dtype="String" itemSubjectRef="__C303A43E-D02C-46F9-9820-7ABEC8CDFD05_SubjectInputXItem" name="Subject"/>
@@ -764,7 +764,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
         <bpmn2:dataInput id="_C303A43E-D02C-46F9-9820-7ABEC8CDFD05_DebugInputX" drools:dtype="String" itemSubjectRef="__C303A43E-D02C-46F9-9820-7ABEC8CDFD05_DebugInputXItem" name="Debug"/>
         <bpmn2:dataInput id="_C303A43E-D02C-46F9-9820-7ABEC8CDFD05_Reply-ToInputX" drools:dtype="String" itemSubjectRef="__C303A43E-D02C-46F9-9820-7ABEC8CDFD05_Reply-ToInputXItem" name="Reply-To"/>
         <bpmn2:dataInput id="_C303A43E-D02C-46F9-9820-7ABEC8CDFD05_TaskNameInputX" drools:dtype="Object" name="TaskName"/>
-        <bpmn2:inputSet id="_1LFboANkEe6ssOa6OKTjIg">
+        <bpmn2:inputSet id="_DC78QANlEe6ssOa6OKTjIg">
           <bpmn2:dataInputRefs>_C303A43E-D02C-46F9-9820-7ABEC8CDFD05_FromInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_C303A43E-D02C-46F9-9820-7ABEC8CDFD05_ToInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_C303A43E-D02C-46F9-9820-7ABEC8CDFD05_SubjectInputX</bpmn2:dataInputRefs>
@@ -778,50 +778,50 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
           <bpmn2:dataInputRefs>_C303A43E-D02C-46F9-9820-7ABEC8CDFD05_Reply-ToInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_C303A43E-D02C-46F9-9820-7ABEC8CDFD05_TaskNameInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="_1LFboQNkEe6ssOa6OKTjIg"/>
+        <bpmn2:outputSet id="_DC8i4ANlEe6ssOa6OKTjIg"/>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_1LFbogNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8i4QNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_C303A43E-D02C-46F9-9820-7ABEC8CDFD05_FromInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFbowNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFbpANkEe6ssOa6OKTjIg"><![CDATA[direccion.cis@unl.edu.ec]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFbpQNkEe6ssOa6OKTjIg">_C303A43E-D02C-46F9-9820-7ABEC8CDFD05_FromInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8i4gNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8i4wNlEe6ssOa6OKTjIg"><![CDATA[direccion.cis@unl.edu.ec]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8i5ANlEe6ssOa6OKTjIg">_C303A43E-D02C-46F9-9820-7ABEC8CDFD05_FromInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFbpgNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8i5QNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_C303A43E-D02C-46F9-9820-7ABEC8CDFD05_ToInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFbpwNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFbqANkEe6ssOa6OKTjIg"><![CDATA[#{initiator}@email.com]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFbqQNkEe6ssOa6OKTjIg">_C303A43E-D02C-46F9-9820-7ABEC8CDFD05_ToInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8i5gNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8i5wNlEe6ssOa6OKTjIg"><![CDATA[#{initiator}@email.com]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8i6ANlEe6ssOa6OKTjIg">_C303A43E-D02C-46F9-9820-7ABEC8CDFD05_ToInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFbqgNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8i6QNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_C303A43E-D02C-46F9-9820-7ABEC8CDFD05_SubjectInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFbqwNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFbrANkEe6ssOa6OKTjIg"><![CDATA[Tramite de Récord Académico, Subir la Documentación Necesaria]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFbrQNkEe6ssOa6OKTjIg">_C303A43E-D02C-46F9-9820-7ABEC8CDFD05_SubjectInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8i6gNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8i6wNlEe6ssOa6OKTjIg"><![CDATA[Tramite de Récord Académico, Subir la Documentación Necesaria]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8i7ANlEe6ssOa6OKTjIg">_C303A43E-D02C-46F9-9820-7ABEC8CDFD05_SubjectInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFbrgNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8i7QNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_C303A43E-D02C-46F9-9820-7ABEC8CDFD05_TemplateInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFbrwNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFbsANkEe6ssOa6OKTjIg"><![CDATA[Plantilla Recordatorio]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFbsQNkEe6ssOa6OKTjIg">_C303A43E-D02C-46F9-9820-7ABEC8CDFD05_TemplateInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8i7gNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8i7wNlEe6ssOa6OKTjIg"><![CDATA[Plantilla Recordatorio]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8i8ANlEe6ssOa6OKTjIg">_C303A43E-D02C-46F9-9820-7ABEC8CDFD05_TemplateInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFbsgNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8i8QNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>initiator</bpmn2:sourceRef>
         <bpmn2:targetRef>_C303A43E-D02C-46F9-9820-7ABEC8CDFD05_initiatorInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFbswNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8i8gNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_C303A43E-D02C-46F9-9820-7ABEC8CDFD05_TaskNameInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFbtANkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFbtQNkEe6ssOa6OKTjIg"><![CDATA[Email]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFbtgNkEe6ssOa6OKTjIg">_C303A43E-D02C-46F9-9820-7ABEC8CDFD05_TaskNameInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8i8wNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8i9ANlEe6ssOa6OKTjIg"><![CDATA[Email]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8i9QNlEe6ssOa6OKTjIg">_C303A43E-D02C-46F9-9820-7ABEC8CDFD05_TaskNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
     </bpmn2:task>
     <bpmn2:userTask id="_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6" name="Generar Record Academico">
-      <bpmn2:documentation id="_1LFbtwNkEe6ssOa6OKTjIg"><![CDATA[El secretario/a de la Facultad de la Energía, las Industrias y los Recursos Naturales no Renovables es el encargado de legalizar el Récord Académico si esta correcto, caso contrario enviara comentarios con las debidas correcciones a la secretaria/o de la Carrera de Ingeniería en Sistemas/Computación]]></bpmn2:documentation>
+      <bpmn2:documentation id="_DC8i9gNlEe6ssOa6OKTjIg"><![CDATA[El secretario/a de la Facultad de la Energía, las Industrias y los Recursos Naturales no Renovables es el encargado de legalizar el Récord Académico si esta correcto, caso contrario enviara comentarios con las debidas correcciones a la secretaria/o de la Carrera de Ingeniería en Sistemas/Computación]]></bpmn2:documentation>
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
           <drools:metaValue><![CDATA[Generar Record Academico]]></drools:metaValue>
@@ -829,7 +829,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
       </bpmn2:extensionElements>
       <bpmn2:incoming>_922406EF-6316-4442-AC5B-37AA6366C7E3</bpmn2:incoming>
       <bpmn2:outgoing>_26245D14-B83A-4C74-B19D-1A81414B1513</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_1LFbuANkEe6ssOa6OKTjIg">
+      <bpmn2:ioSpecification id="_DC8i9wNlEe6ssOa6OKTjIg">
         <bpmn2:dataInput id="_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_TaskNameInputX" drools:dtype="Object" itemSubjectRef="__D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_TaskNameInputXItem" name="TaskName"/>
         <bpmn2:dataInput id="_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_solicitudRecordAcademicoInputX" drools:dtype="org.jbpm.document.Document" itemSubjectRef="__D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_solicitudRecordAcademicoInputXItem" name="solicitudRecordAcademico"/>
         <bpmn2:dataInput id="_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_sugerenciaInputX" drools:dtype="String" itemSubjectRef="__D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_sugerenciaInputXItem" name="sugerencia"/>
@@ -838,7 +838,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
         <bpmn2:dataInput id="_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_GroupIdInputX" drools:dtype="Object" itemSubjectRef="__D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_GroupIdInputXItem" name="GroupId"/>
         <bpmn2:dataInput id="_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_DescriptionInputX" drools:dtype="Object" itemSubjectRef="__D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_DescriptionInputXItem" name="Description"/>
         <bpmn2:dataOutput id="_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_recordAcademicoOutputX" drools:dtype="org.jbpm.document.Document" itemSubjectRef="__D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_recordAcademicoOutputXItem" name="recordAcademico"/>
-        <bpmn2:inputSet id="_1LFbuQNkEe6ssOa6OKTjIg">
+        <bpmn2:inputSet id="_DC8i-ANlEe6ssOa6OKTjIg">
           <bpmn2:dataInputRefs>_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_TaskNameInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_solicitudRecordAcademicoInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_sugerenciaInputX</bpmn2:dataInputRefs>
@@ -847,57 +847,57 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
           <bpmn2:dataInputRefs>_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_GroupIdInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_DescriptionInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="_1LFbugNkEe6ssOa6OKTjIg">
+        <bpmn2:outputSet id="_DC8i-QNlEe6ssOa6OKTjIg">
           <bpmn2:dataOutputRefs>_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_recordAcademicoOutputX</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_1LFbuwNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8i-gNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_TaskNameInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFbvANkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFbvQNkEe6ssOa6OKTjIg"><![CDATA[GenerarRecordAcademico]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFbvgNkEe6ssOa6OKTjIg">_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_TaskNameInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8i-wNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8i_ANlEe6ssOa6OKTjIg"><![CDATA[GenerarRecordAcademico]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8i_QNlEe6ssOa6OKTjIg">_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_TaskNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFbvwNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8i_gNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>solicitudRecordAcademico</bpmn2:sourceRef>
         <bpmn2:targetRef>_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_solicitudRecordAcademicoInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFbwANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8i_wNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>sugerencia</bpmn2:sourceRef>
         <bpmn2:targetRef>_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_sugerenciaInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFbwQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jAANlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>informacion</bpmn2:sourceRef>
         <bpmn2:targetRef>_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_informacionInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFbwgNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jAQNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_SkippableInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFbwwNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFbxANkEe6ssOa6OKTjIg"><![CDATA[false]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFbxQNkEe6ssOa6OKTjIg">_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_SkippableInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jAgNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jAwNlEe6ssOa6OKTjIg"><![CDATA[false]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jBANlEe6ssOa6OKTjIg">_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_SkippableInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFbxgNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jBQNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_GroupIdInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFbxwNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFbyANkEe6ssOa6OKTjIg"><![CDATA[Administrativo-Carrera-CIS-C]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFbyQNkEe6ssOa6OKTjIg">_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_GroupIdInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jBgNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jBwNlEe6ssOa6OKTjIg"><![CDATA[Administrativo-Carrera-CIS-C]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jCANlEe6ssOa6OKTjIg">_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_GroupIdInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFbygNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jCQNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_DescriptionInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFbywNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFbzANkEe6ssOa6OKTjIg"><![CDATA[Generar Récord Académico para #{initiator}]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFbzQNkEe6ssOa6OKTjIg">_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_DescriptionInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jCgNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jCwNlEe6ssOa6OKTjIg"><![CDATA[Generar Récord Académico para #{initiator}]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jDANlEe6ssOa6OKTjIg">_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_DescriptionInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataOutputAssociation id="_1LFbzgNkEe6ssOa6OKTjIg">
+      <bpmn2:dataOutputAssociation id="_DC8jDQNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6_recordAcademicoOutputX</bpmn2:sourceRef>
         <bpmn2:targetRef>recordAcademico</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
     </bpmn2:userTask>
     <bpmn2:task id="_25678182-2281-45D0-9661-4689717CD6B5" drools:taskName="Email" name="Enviar Notificacion Recordatorio Tarea">
-      <bpmn2:documentation id="_1LFbzwNkEe6ssOa6OKTjIg"><![CDATA[jbpm-workitems-email/index.html]]></bpmn2:documentation>
+      <bpmn2:documentation id="_DC8jDgNlEe6ssOa6OKTjIg"><![CDATA[jbpm-workitems-email/index.html]]></bpmn2:documentation>
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
           <drools:metaValue><![CDATA[Enviar Notificacion Recordatorio Tarea]]></drools:metaValue>
@@ -905,7 +905,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
       </bpmn2:extensionElements>
       <bpmn2:incoming>_93EBFB48-FAD6-4FD0-89ED-D517268F1EB1</bpmn2:incoming>
       <bpmn2:outgoing>_65700128-8489-43CC-AB2E-9C4B6238FEDC</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_1LFb0ANkEe6ssOa6OKTjIg">
+      <bpmn2:ioSpecification id="_DC8jDwNlEe6ssOa6OKTjIg">
         <bpmn2:dataInput id="_25678182-2281-45D0-9661-4689717CD6B5_FromInputX" drools:dtype="String" itemSubjectRef="__25678182-2281-45D0-9661-4689717CD6B5_FromInputXItem" name="From"/>
         <bpmn2:dataInput id="_25678182-2281-45D0-9661-4689717CD6B5_SubjectInputX" drools:dtype="String" itemSubjectRef="__25678182-2281-45D0-9661-4689717CD6B5_SubjectInputXItem" name="Subject"/>
         <bpmn2:dataInput id="_25678182-2281-45D0-9661-4689717CD6B5_TemplateInputX" drools:dtype="String" itemSubjectRef="__25678182-2281-45D0-9661-4689717CD6B5_TemplateInputXItem" name="Template"/>
@@ -919,7 +919,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
         <bpmn2:dataInput id="_25678182-2281-45D0-9661-4689717CD6B5_DebugInputX" drools:dtype="String" itemSubjectRef="__25678182-2281-45D0-9661-4689717CD6B5_DebugInputXItem" name="Debug"/>
         <bpmn2:dataInput id="_25678182-2281-45D0-9661-4689717CD6B5_Reply-ToInputX" drools:dtype="String" itemSubjectRef="__25678182-2281-45D0-9661-4689717CD6B5_Reply-ToInputXItem" name="Reply-To"/>
         <bpmn2:dataInput id="_25678182-2281-45D0-9661-4689717CD6B5_TaskNameInputX" drools:dtype="Object" name="TaskName"/>
-        <bpmn2:inputSet id="_1LFb0QNkEe6ssOa6OKTjIg">
+        <bpmn2:inputSet id="_DC8jEANlEe6ssOa6OKTjIg">
           <bpmn2:dataInputRefs>_25678182-2281-45D0-9661-4689717CD6B5_FromInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_25678182-2281-45D0-9661-4689717CD6B5_SubjectInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_25678182-2281-45D0-9661-4689717CD6B5_TemplateInputX</bpmn2:dataInputRefs>
@@ -934,52 +934,52 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
           <bpmn2:dataInputRefs>_25678182-2281-45D0-9661-4689717CD6B5_Reply-ToInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_25678182-2281-45D0-9661-4689717CD6B5_TaskNameInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="_1LFb0gNkEe6ssOa6OKTjIg"/>
+        <bpmn2:outputSet id="_DC8jEQNlEe6ssOa6OKTjIg"/>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_1LFb0wNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jEgNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_25678182-2281-45D0-9661-4689717CD6B5_FromInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFb1ANkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFb1QNkEe6ssOa6OKTjIg"><![CDATA[direccion.cis@unl.edu.ec]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFb1gNkEe6ssOa6OKTjIg">_25678182-2281-45D0-9661-4689717CD6B5_FromInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jEwNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jFANlEe6ssOa6OKTjIg"><![CDATA[direccion.cis@unl.edu.ec]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jFQNlEe6ssOa6OKTjIg">_25678182-2281-45D0-9661-4689717CD6B5_FromInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFb1wNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jFgNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_25678182-2281-45D0-9661-4689717CD6B5_SubjectInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFb2ANkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFb2QNkEe6ssOa6OKTjIg"><![CDATA[Tramite de Record Academico, revisar tareas por hacer]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFb2gNkEe6ssOa6OKTjIg">_25678182-2281-45D0-9661-4689717CD6B5_SubjectInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jFwNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jGANlEe6ssOa6OKTjIg"><![CDATA[Tramite de Record Academico, revisar tareas por hacer]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jGQNlEe6ssOa6OKTjIg">_25678182-2281-45D0-9661-4689717CD6B5_SubjectInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFb2wNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jGgNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_25678182-2281-45D0-9661-4689717CD6B5_TemplateInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFb3ANkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFb3QNkEe6ssOa6OKTjIg"><![CDATA[Plantilla Recordatorio Tarea]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFb3gNkEe6ssOa6OKTjIg">_25678182-2281-45D0-9661-4689717CD6B5_TemplateInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jGwNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jHANlEe6ssOa6OKTjIg"><![CDATA[Plantilla Recordatorio Tarea]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jHQNlEe6ssOa6OKTjIg">_25678182-2281-45D0-9661-4689717CD6B5_TemplateInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFb3wNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jHgNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_25678182-2281-45D0-9661-4689717CD6B5_ToInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFb4ANkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFb4QNkEe6ssOa6OKTjIg"><![CDATA[secretaria.cis@unl.edu.ec]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFb4gNkEe6ssOa6OKTjIg">_25678182-2281-45D0-9661-4689717CD6B5_ToInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jHwNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jIANlEe6ssOa6OKTjIg"><![CDATA[secretaria.cis@unl.edu.ec]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jIQNlEe6ssOa6OKTjIg">_25678182-2281-45D0-9661-4689717CD6B5_ToInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFb4wNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jIgNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>initiator</bpmn2:sourceRef>
         <bpmn2:targetRef>_25678182-2281-45D0-9661-4689717CD6B5_initiatorInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFb5ANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jIwNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_25678182-2281-45D0-9661-4689717CD6B5_taskNameInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFb5QNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFb5gNkEe6ssOa6OKTjIg"><![CDATA[Generar Record Academico]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFb5wNkEe6ssOa6OKTjIg">_25678182-2281-45D0-9661-4689717CD6B5_taskNameInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jJANlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jJQNlEe6ssOa6OKTjIg"><![CDATA[Generar Record Academico]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jJgNlEe6ssOa6OKTjIg">_25678182-2281-45D0-9661-4689717CD6B5_taskNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFb6ANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jJwNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_25678182-2281-45D0-9661-4689717CD6B5_TaskNameInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFb6QNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFb6gNkEe6ssOa6OKTjIg"><![CDATA[Generar Record Academico]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFb6wNkEe6ssOa6OKTjIg">_25678182-2281-45D0-9661-4689717CD6B5_TaskNameInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jKANlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jKQNlEe6ssOa6OKTjIg"><![CDATA[Generar Record Academico]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jKgNlEe6ssOa6OKTjIg">_25678182-2281-45D0-9661-4689717CD6B5_TaskNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
     </bpmn2:task>
@@ -992,7 +992,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
       <bpmn2:incoming>_65700128-8489-43CC-AB2E-9C4B6238FEDC</bpmn2:incoming>
     </bpmn2:endEvent>
     <bpmn2:userTask id="_BC464F8D-4BED-4EF1-8887-9D01CA81EF73" name="Revisar Documentacion de Egresado">
-      <bpmn2:documentation id="_1LFb7ANkEe6ssOa6OKTjIg"><![CDATA[La secretaria de la Carrera de Ingeniería en Sistemas/Computación se encargada de revisar los documentos y de ser necesario puede enviar comentarios en el caso que los documentos no sean los correctos]]></bpmn2:documentation>
+      <bpmn2:documentation id="_DC8jKwNlEe6ssOa6OKTjIg"><![CDATA[La secretaria de la Carrera de Ingeniería en Sistemas/Computación se encargada de revisar los documentos y de ser necesario puede enviar comentarios en el caso que los documentos no sean los correctos]]></bpmn2:documentation>
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
           <drools:metaValue><![CDATA[Revisar Documentacion de Egresado]]></drools:metaValue>
@@ -1000,7 +1000,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
       </bpmn2:extensionElements>
       <bpmn2:incoming>_B152622B-A932-465C-A7CB-FE6F00462C45</bpmn2:incoming>
       <bpmn2:outgoing>_0CEE8C28-2F3D-446E-B68D-6FF787659B5E</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_1LFb7QNkEe6ssOa6OKTjIg">
+      <bpmn2:ioSpecification id="_DC8jLANlEe6ssOa6OKTjIg">
         <bpmn2:dataInput id="_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_TaskNameInputX" drools:dtype="Object" itemSubjectRef="__BC464F8D-4BED-4EF1-8887-9D01CA81EF73_TaskNameInputXItem" name="TaskName"/>
         <bpmn2:dataInput id="_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_solicitudRecordAcademicoInputX" drools:dtype="org.jbpm.document.Document" itemSubjectRef="__BC464F8D-4BED-4EF1-8887-9D01CA81EF73_solicitudRecordAcademicoInputXItem" name="solicitudRecordAcademico"/>
         <bpmn2:dataInput id="_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_certificadoIdiomasInputX" drools:dtype="org.jbpm.document.Document" itemSubjectRef="__BC464F8D-4BED-4EF1-8887-9D01CA81EF73_certificadoIdiomasInputXItem" name="certificadoIdiomas"/>
@@ -1012,7 +1012,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
         <bpmn2:dataInput id="_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_DescriptionInputX" drools:dtype="Object" itemSubjectRef="__BC464F8D-4BED-4EF1-8887-9D01CA81EF73_DescriptionInputXItem" name="Description"/>
         <bpmn2:dataOutput id="_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_esCorrectaDocumentacionOutputX" drools:dtype="Boolean" itemSubjectRef="__BC464F8D-4BED-4EF1-8887-9D01CA81EF73_esCorrectaDocumentacionOutputXItem" name="esCorrectaDocumentacion"/>
         <bpmn2:dataOutput id="_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_comentarioOutputX" drools:dtype="String" itemSubjectRef="__BC464F8D-4BED-4EF1-8887-9D01CA81EF73_comentarioOutputXItem" name="comentario"/>
-        <bpmn2:inputSet id="_1LFb7gNkEe6ssOa6OKTjIg">
+        <bpmn2:inputSet id="_DC8jLQNlEe6ssOa6OKTjIg">
           <bpmn2:dataInputRefs>_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_TaskNameInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_solicitudRecordAcademicoInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_certificadoIdiomasInputX</bpmn2:dataInputRefs>
@@ -1023,70 +1023,70 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
           <bpmn2:dataInputRefs>_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_GroupIdInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_DescriptionInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="_1LFb7wNkEe6ssOa6OKTjIg">
+        <bpmn2:outputSet id="_DC8jLgNlEe6ssOa6OKTjIg">
           <bpmn2:dataOutputRefs>_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_esCorrectaDocumentacionOutputX</bpmn2:dataOutputRefs>
           <bpmn2:dataOutputRefs>_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_comentarioOutputX</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_1LFb8ANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jLwNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_TaskNameInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFb8QNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFb8gNkEe6ssOa6OKTjIg"><![CDATA[RevisarDocumentacionEgresado]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFb8wNkEe6ssOa6OKTjIg">_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_TaskNameInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jMANlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jMQNlEe6ssOa6OKTjIg"><![CDATA[RevisarDocumentacionEgresado]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jMgNlEe6ssOa6OKTjIg">_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_TaskNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFb9ANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jMwNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>solicitudRecordAcademico</bpmn2:sourceRef>
         <bpmn2:targetRef>_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_solicitudRecordAcademicoInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFb9QNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jNANlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>certificadoIdiomas</bpmn2:sourceRef>
         <bpmn2:targetRef>_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_certificadoIdiomasInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFb9gNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jNQNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>certificadoEducaFisica</bpmn2:sourceRef>
         <bpmn2:targetRef>_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_certificadoEducaFisicaInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFb9wNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jNgNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>certificadoPracticasPre</bpmn2:sourceRef>
         <bpmn2:targetRef>_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_certificadoPracticasPreInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFb-ANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jNwNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>nombres</bpmn2:sourceRef>
         <bpmn2:targetRef>_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_nombresInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFb-QNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jOANlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_SkippableInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFb-gNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFb-wNkEe6ssOa6OKTjIg"><![CDATA[false]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFb_ANkEe6ssOa6OKTjIg">_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_SkippableInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jOQNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jOgNlEe6ssOa6OKTjIg"><![CDATA[false]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jOwNlEe6ssOa6OKTjIg">_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_SkippableInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFb_QNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jPANlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_GroupIdInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFb_gNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFb_wNkEe6ssOa6OKTjIg"><![CDATA[Administrativo-Carrera-CIS-C]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFcAANkEe6ssOa6OKTjIg">_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_GroupIdInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jPQNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jPgNlEe6ssOa6OKTjIg"><![CDATA[Administrativo-Carrera-CIS-C]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jPwNlEe6ssOa6OKTjIg">_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_GroupIdInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFcAQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jQANlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_DescriptionInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFcAgNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFcAwNkEe6ssOa6OKTjIg"><![CDATA[Revisar Documentación de #{initiator}]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFcBANkEe6ssOa6OKTjIg">_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_DescriptionInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jQQNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jQgNlEe6ssOa6OKTjIg"><![CDATA[Revisar Documentación de #{initiator}]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jQwNlEe6ssOa6OKTjIg">_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_DescriptionInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataOutputAssociation id="_1LFcBQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataOutputAssociation id="_DC8jRANlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_esCorrectaDocumentacionOutputX</bpmn2:sourceRef>
         <bpmn2:targetRef>esCorrectaDocumentacion</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
-      <bpmn2:dataOutputAssociation id="_1LFcBgNkEe6ssOa6OKTjIg">
+      <bpmn2:dataOutputAssociation id="_DC8jRQNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>_BC464F8D-4BED-4EF1-8887-9D01CA81EF73_comentarioOutputX</bpmn2:sourceRef>
         <bpmn2:targetRef>comentario</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
     </bpmn2:userTask>
     <bpmn2:task id="_A25F0C39-82DD-4A6A-A75A-C842B7207D9A" drools:taskName="Email" name="Enviar Notificacion Recordatorio Tarea">
-      <bpmn2:documentation id="_1LFcBwNkEe6ssOa6OKTjIg"><![CDATA[jbpm-workitems-email/index.html]]></bpmn2:documentation>
+      <bpmn2:documentation id="_DC8jRgNlEe6ssOa6OKTjIg"><![CDATA[jbpm-workitems-email/index.html]]></bpmn2:documentation>
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
           <drools:metaValue><![CDATA[Enviar Notificacion Recordatorio Tarea]]></drools:metaValue>
@@ -1094,7 +1094,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
       </bpmn2:extensionElements>
       <bpmn2:incoming>_7F3851A7-E3CD-400B-A7EE-8643E0670C2C</bpmn2:incoming>
       <bpmn2:outgoing>_AD01AAAA-B065-4513-8992-F26CB59D1FC6</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_1LFcCANkEe6ssOa6OKTjIg">
+      <bpmn2:ioSpecification id="_DC8jRwNlEe6ssOa6OKTjIg">
         <bpmn2:dataInput id="_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_FromInputX" drools:dtype="String" itemSubjectRef="__A25F0C39-82DD-4A6A-A75A-C842B7207D9A_FromInputXItem" name="From"/>
         <bpmn2:dataInput id="_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_SubjectInputX" drools:dtype="String" itemSubjectRef="__A25F0C39-82DD-4A6A-A75A-C842B7207D9A_SubjectInputXItem" name="Subject"/>
         <bpmn2:dataInput id="_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_TemplateInputX" drools:dtype="String" itemSubjectRef="__A25F0C39-82DD-4A6A-A75A-C842B7207D9A_TemplateInputXItem" name="Template"/>
@@ -1108,7 +1108,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
         <bpmn2:dataInput id="_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_DebugInputX" drools:dtype="String" itemSubjectRef="__A25F0C39-82DD-4A6A-A75A-C842B7207D9A_DebugInputXItem" name="Debug"/>
         <bpmn2:dataInput id="_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_Reply-ToInputX" drools:dtype="String" itemSubjectRef="__A25F0C39-82DD-4A6A-A75A-C842B7207D9A_Reply-ToInputXItem" name="Reply-To"/>
         <bpmn2:dataInput id="_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_TaskNameInputX" drools:dtype="Object" name="TaskName"/>
-        <bpmn2:inputSet id="_1LFcCQNkEe6ssOa6OKTjIg">
+        <bpmn2:inputSet id="_DC8jSANlEe6ssOa6OKTjIg">
           <bpmn2:dataInputRefs>_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_FromInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_SubjectInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_TemplateInputX</bpmn2:dataInputRefs>
@@ -1123,52 +1123,52 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
           <bpmn2:dataInputRefs>_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_Reply-ToInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_TaskNameInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="_1LFcCgNkEe6ssOa6OKTjIg"/>
+        <bpmn2:outputSet id="_DC8jSQNlEe6ssOa6OKTjIg"/>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_1LFcCwNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jSgNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_FromInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFcDANkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFcDQNkEe6ssOa6OKTjIg"><![CDATA[direccion.cis@unl.edu.ec]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFcDgNkEe6ssOa6OKTjIg">_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_FromInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jSwNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jTANlEe6ssOa6OKTjIg"><![CDATA[direccion.cis@unl.edu.ec]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jTQNlEe6ssOa6OKTjIg">_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_FromInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFcDwNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jTgNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_SubjectInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFcEANkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFcEQNkEe6ssOa6OKTjIg"><![CDATA[Tramite de Record Academico, revisar tareas por hacer]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFcEgNkEe6ssOa6OKTjIg">_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_SubjectInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jTwNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jUANlEe6ssOa6OKTjIg"><![CDATA[Tramite de Record Academico, revisar tareas por hacer]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jUQNlEe6ssOa6OKTjIg">_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_SubjectInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFcEwNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jUgNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_TemplateInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFcFANkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFcFQNkEe6ssOa6OKTjIg"><![CDATA[Plantilla Recordatorio Tarea]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFcFgNkEe6ssOa6OKTjIg">_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_TemplateInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jUwNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jVANlEe6ssOa6OKTjIg"><![CDATA[Plantilla Recordatorio Tarea]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jVQNlEe6ssOa6OKTjIg">_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_TemplateInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFcFwNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jVgNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_ToInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFcGANkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFcGQNkEe6ssOa6OKTjIg"><![CDATA[secretaria.feirnnr@unl.edu.ec]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFcGgNkEe6ssOa6OKTjIg">_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_ToInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jVwNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jWANlEe6ssOa6OKTjIg"><![CDATA[secretaria.feirnnr@unl.edu.ec]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jWQNlEe6ssOa6OKTjIg">_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_ToInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFcGwNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jWgNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>initiator</bpmn2:sourceRef>
         <bpmn2:targetRef>_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_initiatorInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFcHANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jWwNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_taskNameInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFcHQNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFcHgNkEe6ssOa6OKTjIg"><![CDATA[Legalizar Record Academico]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFcHwNkEe6ssOa6OKTjIg">_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_taskNameInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jXANlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jXQNlEe6ssOa6OKTjIg"><![CDATA[Legalizar Record Academico]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jXgNlEe6ssOa6OKTjIg">_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_taskNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFcIANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jXwNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_TaskNameInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFcIQNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFcIgNkEe6ssOa6OKTjIg"><![CDATA[Legalizar Record Academico]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFcIwNkEe6ssOa6OKTjIg">_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_TaskNameInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jYANlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jYQNlEe6ssOa6OKTjIg"><![CDATA[Legalizar Record Academico]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jYgNlEe6ssOa6OKTjIg">_A25F0C39-82DD-4A6A-A75A-C842B7207D9A_TaskNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
     </bpmn2:task>
@@ -1184,7 +1184,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
       <bpmn2:outgoing>_B8C168DA-89BC-491A-943C-CBABFE163C0A</bpmn2:outgoing>
     </bpmn2:startEvent>
     <bpmn2:userTask id="_2A3F9959-9136-4660-BC6E-A3424850FE2B" name="Egresado Entrega Requisitos">
-      <bpmn2:documentation id="_1LFcJANkEe6ssOa6OKTjIg"><![CDATA[El Egresado entrega los requisitos correspondientes para generar el Récord Académico, los cuales son solicitud Récord Académico, certificado Idiomas, certificado de Educación Física, certificado Practicas Preprofesionales]]></bpmn2:documentation>
+      <bpmn2:documentation id="_DC8jYwNlEe6ssOa6OKTjIg"><![CDATA[El Egresado entrega los requisitos correspondientes para generar el Récord Académico, los cuales son solicitud Récord Académico, certificado Idiomas, certificado de Educación Física, certificado Practicas Preprofesionales]]></bpmn2:documentation>
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
           <drools:metaValue><![CDATA[Egresado Entrega Requisitos]]></drools:metaValue>
@@ -1192,7 +1192,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
       </bpmn2:extensionElements>
       <bpmn2:incoming>_F1DCC0CC-3733-43C1-8941-B8477F4F2F22</bpmn2:incoming>
       <bpmn2:outgoing>_B152622B-A932-465C-A7CB-FE6F00462C45</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_1LFcJQNkEe6ssOa6OKTjIg">
+      <bpmn2:ioSpecification id="_DC8jZANlEe6ssOa6OKTjIg">
         <bpmn2:dataInput id="_2A3F9959-9136-4660-BC6E-A3424850FE2B_TaskNameInputX" drools:dtype="Object" itemSubjectRef="__2A3F9959-9136-4660-BC6E-A3424850FE2B_TaskNameInputXItem" name="TaskName"/>
         <bpmn2:dataInput id="_2A3F9959-9136-4660-BC6E-A3424850FE2B_comentarioInputX" drools:dtype="String" itemSubjectRef="__2A3F9959-9136-4660-BC6E-A3424850FE2B_comentarioInputXItem" name="comentario"/>
         <bpmn2:dataInput id="_2A3F9959-9136-4660-BC6E-A3424850FE2B_SkippableInputX" drools:dtype="Object" itemSubjectRef="__2A3F9959-9136-4660-BC6E-A3424850FE2B_SkippableInputXItem" name="Skippable"/>
@@ -1203,7 +1203,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
         <bpmn2:dataOutput id="_2A3F9959-9136-4660-BC6E-A3424850FE2B_certificadoIdiomasOutputX" drools:dtype="org.jbpm.document.Document" itemSubjectRef="__2A3F9959-9136-4660-BC6E-A3424850FE2B_certificadoIdiomasOutputXItem" name="certificadoIdiomas"/>
         <bpmn2:dataOutput id="_2A3F9959-9136-4660-BC6E-A3424850FE2B_certificadoEducaFisicaOutputX" drools:dtype="org.jbpm.document.Document" itemSubjectRef="__2A3F9959-9136-4660-BC6E-A3424850FE2B_certificadoEducaFisicaOutputXItem" name="certificadoEducaFisica"/>
         <bpmn2:dataOutput id="_2A3F9959-9136-4660-BC6E-A3424850FE2B_certificadoPracticasPreOutputX" drools:dtype="org.jbpm.document.Document" itemSubjectRef="__2A3F9959-9136-4660-BC6E-A3424850FE2B_certificadoPracticasPreOutputXItem" name="certificadoPracticasPre"/>
-        <bpmn2:inputSet id="_1LFcJgNkEe6ssOa6OKTjIg">
+        <bpmn2:inputSet id="_DC8jZQNlEe6ssOa6OKTjIg">
           <bpmn2:dataInputRefs>_2A3F9959-9136-4660-BC6E-A3424850FE2B_TaskNameInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_2A3F9959-9136-4660-BC6E-A3424850FE2B_comentarioInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_2A3F9959-9136-4660-BC6E-A3424850FE2B_SkippableInputX</bpmn2:dataInputRefs>
@@ -1211,76 +1211,76 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
           <bpmn2:dataInputRefs>_2A3F9959-9136-4660-BC6E-A3424850FE2B_DescriptionInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_2A3F9959-9136-4660-BC6E-A3424850FE2B_CreatedByInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="_1LFcJwNkEe6ssOa6OKTjIg">
+        <bpmn2:outputSet id="_DC8jZgNlEe6ssOa6OKTjIg">
           <bpmn2:dataOutputRefs>_2A3F9959-9136-4660-BC6E-A3424850FE2B_solicitudRecordAcademicoOutputX</bpmn2:dataOutputRefs>
           <bpmn2:dataOutputRefs>_2A3F9959-9136-4660-BC6E-A3424850FE2B_certificadoIdiomasOutputX</bpmn2:dataOutputRefs>
           <bpmn2:dataOutputRefs>_2A3F9959-9136-4660-BC6E-A3424850FE2B_certificadoEducaFisicaOutputX</bpmn2:dataOutputRefs>
           <bpmn2:dataOutputRefs>_2A3F9959-9136-4660-BC6E-A3424850FE2B_certificadoPracticasPreOutputX</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_1LFcKANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jZwNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_2A3F9959-9136-4660-BC6E-A3424850FE2B_TaskNameInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFcKQNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFcKgNkEe6ssOa6OKTjIg"><![CDATA[EgresadoEntregaRequisitos]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFcKwNkEe6ssOa6OKTjIg">_2A3F9959-9136-4660-BC6E-A3424850FE2B_TaskNameInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jaANlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jaQNlEe6ssOa6OKTjIg"><![CDATA[EgresadoEntregaRequisitos]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jagNlEe6ssOa6OKTjIg">_2A3F9959-9136-4660-BC6E-A3424850FE2B_TaskNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFcLANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jawNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>comentario</bpmn2:sourceRef>
         <bpmn2:targetRef>_2A3F9959-9136-4660-BC6E-A3424850FE2B_comentarioInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFcLQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jbANlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_2A3F9959-9136-4660-BC6E-A3424850FE2B_SkippableInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFcLgNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFcLwNkEe6ssOa6OKTjIg"><![CDATA[false]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFcMANkEe6ssOa6OKTjIg">_2A3F9959-9136-4660-BC6E-A3424850FE2B_SkippableInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jbQNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jbgNlEe6ssOa6OKTjIg"><![CDATA[false]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jbwNlEe6ssOa6OKTjIg">_2A3F9959-9136-4660-BC6E-A3424850FE2B_SkippableInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFcMQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jcANlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_2A3F9959-9136-4660-BC6E-A3424850FE2B_CommentInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFcMgNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFcMwNkEe6ssOa6OKTjIg"><![CDATA[Egresado sube PDFs]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFcNANkEe6ssOa6OKTjIg">_2A3F9959-9136-4660-BC6E-A3424850FE2B_CommentInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jcQNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jcgNlEe6ssOa6OKTjIg"><![CDATA[Egresado sube PDFs]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jcwNlEe6ssOa6OKTjIg">_2A3F9959-9136-4660-BC6E-A3424850FE2B_CommentInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFcNQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jdANlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_2A3F9959-9136-4660-BC6E-A3424850FE2B_DescriptionInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFcNgNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFcNwNkEe6ssOa6OKTjIg"><![CDATA[Entregar los Requisitos Correspondientes]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFcOANkEe6ssOa6OKTjIg">_2A3F9959-9136-4660-BC6E-A3424850FE2B_DescriptionInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jdQNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jdgNlEe6ssOa6OKTjIg"><![CDATA[Entregar los Requisitos Correspondientes]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jdwNlEe6ssOa6OKTjIg">_2A3F9959-9136-4660-BC6E-A3424850FE2B_DescriptionInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFcOQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jeANlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_2A3F9959-9136-4660-BC6E-A3424850FE2B_CreatedByInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFcOgNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFcOwNkEe6ssOa6OKTjIg"><![CDATA[${initiator}]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFcPANkEe6ssOa6OKTjIg">_2A3F9959-9136-4660-BC6E-A3424850FE2B_CreatedByInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jeQNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jegNlEe6ssOa6OKTjIg"><![CDATA[${initiator}]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jewNlEe6ssOa6OKTjIg">_2A3F9959-9136-4660-BC6E-A3424850FE2B_CreatedByInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataOutputAssociation id="_1LFcPQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataOutputAssociation id="_DC8jfANlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>_2A3F9959-9136-4660-BC6E-A3424850FE2B_solicitudRecordAcademicoOutputX</bpmn2:sourceRef>
         <bpmn2:targetRef>solicitudRecordAcademico</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
-      <bpmn2:dataOutputAssociation id="_1LFcPgNkEe6ssOa6OKTjIg">
+      <bpmn2:dataOutputAssociation id="_DC8jfQNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>_2A3F9959-9136-4660-BC6E-A3424850FE2B_certificadoIdiomasOutputX</bpmn2:sourceRef>
         <bpmn2:targetRef>certificadoIdiomas</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
-      <bpmn2:dataOutputAssociation id="_1LFcPwNkEe6ssOa6OKTjIg">
+      <bpmn2:dataOutputAssociation id="_DC8jfgNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>_2A3F9959-9136-4660-BC6E-A3424850FE2B_certificadoEducaFisicaOutputX</bpmn2:sourceRef>
         <bpmn2:targetRef>certificadoEducaFisica</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
-      <bpmn2:dataOutputAssociation id="_1LFcQANkEe6ssOa6OKTjIg">
+      <bpmn2:dataOutputAssociation id="_DC8jfwNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>_2A3F9959-9136-4660-BC6E-A3424850FE2B_certificadoPracticasPreOutputX</bpmn2:sourceRef>
         <bpmn2:targetRef>certificadoPracticasPre</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
-      <bpmn2:potentialOwner id="_703fd286-ec6b-4b67-8fbc-16dedd66cd22">
-        <bpmn2:resourceAssignmentExpression id="_1LFcQQNkEe6ssOa6OKTjIg">
-          <bpmn2:formalExpression id="_1LFcQgNkEe6ssOa6OKTjIg">#{initiator}</bpmn2:formalExpression>
+      <bpmn2:potentialOwner id="_c7725453-2002-4d69-9cef-c19d6be2bc3b">
+        <bpmn2:resourceAssignmentExpression id="_DC8jgANlEe6ssOa6OKTjIg">
+          <bpmn2:formalExpression id="_DC8jgQNlEe6ssOa6OKTjIg">#{initiator}</bpmn2:formalExpression>
         </bpmn2:resourceAssignmentExpression>
       </bpmn2:potentialOwner>
     </bpmn2:userTask>
     <bpmn2:task id="_F8CBA186-60C1-489A-9512-A558D6A00684" drools:taskName="Email" name="Enviar Notificacion Recordatorio">
-      <bpmn2:documentation id="_1LFcQwNkEe6ssOa6OKTjIg"><![CDATA[jbpm-workitems-email/index.html]]></bpmn2:documentation>
+      <bpmn2:documentation id="_DC8jggNlEe6ssOa6OKTjIg"><![CDATA[jbpm-workitems-email/index.html]]></bpmn2:documentation>
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
           <drools:metaValue><![CDATA[Enviar Notificacion Recordatorio]]></drools:metaValue>
@@ -1288,7 +1288,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
       </bpmn2:extensionElements>
       <bpmn2:incoming>_688FAE28-15A9-4A63-86C1-764D5B55DA55</bpmn2:incoming>
       <bpmn2:outgoing>_7435B65D-697B-429D-9B61-1A25AB4450C8</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_1LFcRANkEe6ssOa6OKTjIg">
+      <bpmn2:ioSpecification id="_DC8jgwNlEe6ssOa6OKTjIg">
         <bpmn2:dataInput id="_F8CBA186-60C1-489A-9512-A558D6A00684_FromInputX" drools:dtype="String" itemSubjectRef="__F8CBA186-60C1-489A-9512-A558D6A00684_FromInputXItem" name="From"/>
         <bpmn2:dataInput id="_F8CBA186-60C1-489A-9512-A558D6A00684_ToInputX" drools:dtype="String" itemSubjectRef="__F8CBA186-60C1-489A-9512-A558D6A00684_ToInputXItem" name="To"/>
         <bpmn2:dataInput id="_F8CBA186-60C1-489A-9512-A558D6A00684_SubjectInputX" drools:dtype="String" itemSubjectRef="__F8CBA186-60C1-489A-9512-A558D6A00684_SubjectInputXItem" name="Subject"/>
@@ -1301,7 +1301,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
         <bpmn2:dataInput id="_F8CBA186-60C1-489A-9512-A558D6A00684_DebugInputX" drools:dtype="String" itemSubjectRef="__F8CBA186-60C1-489A-9512-A558D6A00684_DebugInputXItem" name="Debug"/>
         <bpmn2:dataInput id="_F8CBA186-60C1-489A-9512-A558D6A00684_Reply-ToInputX" drools:dtype="String" itemSubjectRef="__F8CBA186-60C1-489A-9512-A558D6A00684_Reply-ToInputXItem" name="Reply-To"/>
         <bpmn2:dataInput id="_F8CBA186-60C1-489A-9512-A558D6A00684_TaskNameInputX" drools:dtype="Object" name="TaskName"/>
-        <bpmn2:inputSet id="_1LFcRQNkEe6ssOa6OKTjIg">
+        <bpmn2:inputSet id="_DC8jhANlEe6ssOa6OKTjIg">
           <bpmn2:dataInputRefs>_F8CBA186-60C1-489A-9512-A558D6A00684_FromInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_F8CBA186-60C1-489A-9512-A558D6A00684_ToInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_F8CBA186-60C1-489A-9512-A558D6A00684_SubjectInputX</bpmn2:dataInputRefs>
@@ -1315,50 +1315,50 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
           <bpmn2:dataInputRefs>_F8CBA186-60C1-489A-9512-A558D6A00684_Reply-ToInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_F8CBA186-60C1-489A-9512-A558D6A00684_TaskNameInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="_1LFcRgNkEe6ssOa6OKTjIg"/>
+        <bpmn2:outputSet id="_DC8jhQNlEe6ssOa6OKTjIg"/>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_1LFcRwNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jhgNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_F8CBA186-60C1-489A-9512-A558D6A00684_FromInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFcSANkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFcSQNkEe6ssOa6OKTjIg"><![CDATA[direccion.cis@unl.edu.ec]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFcSgNkEe6ssOa6OKTjIg">_F8CBA186-60C1-489A-9512-A558D6A00684_FromInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jhwNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jiANlEe6ssOa6OKTjIg"><![CDATA[direccion.cis@unl.edu.ec]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jiQNlEe6ssOa6OKTjIg">_F8CBA186-60C1-489A-9512-A558D6A00684_FromInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFcSwNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jigNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_F8CBA186-60C1-489A-9512-A558D6A00684_ToInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFcTANkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFcTQNkEe6ssOa6OKTjIg"><![CDATA[#{initiator}@email.com]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFcTgNkEe6ssOa6OKTjIg">_F8CBA186-60C1-489A-9512-A558D6A00684_ToInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jiwNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jjANlEe6ssOa6OKTjIg"><![CDATA[#{initiator}@email.com]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jjQNlEe6ssOa6OKTjIg">_F8CBA186-60C1-489A-9512-A558D6A00684_ToInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LFcTwNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jjgNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_F8CBA186-60C1-489A-9512-A558D6A00684_SubjectInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LFcUANkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LFcUQNkEe6ssOa6OKTjIg"><![CDATA[Tramite de Récord Académico, Subir la Documentación Necesaria]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LFcUgNkEe6ssOa6OKTjIg">_F8CBA186-60C1-489A-9512-A558D6A00684_SubjectInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jjwNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jkANlEe6ssOa6OKTjIg"><![CDATA[Tramite de Récord Académico, Subir la Documentación Necesaria]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jkQNlEe6ssOa6OKTjIg">_F8CBA186-60C1-489A-9512-A558D6A00684_SubjectInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCQANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jkgNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_F8CBA186-60C1-489A-9512-A558D6A00684_TemplateInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LGCQQNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LGCQgNkEe6ssOa6OKTjIg"><![CDATA[Plantilla Recordatorio]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LGCQwNkEe6ssOa6OKTjIg">_F8CBA186-60C1-489A-9512-A558D6A00684_TemplateInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jkwNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jlANlEe6ssOa6OKTjIg"><![CDATA[Plantilla Recordatorio]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jlQNlEe6ssOa6OKTjIg">_F8CBA186-60C1-489A-9512-A558D6A00684_TemplateInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCRANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jlgNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>initiator</bpmn2:sourceRef>
         <bpmn2:targetRef>_F8CBA186-60C1-489A-9512-A558D6A00684_initiatorInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCRQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jlwNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_F8CBA186-60C1-489A-9512-A558D6A00684_TaskNameInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LGCRgNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LGCRwNkEe6ssOa6OKTjIg"><![CDATA[Email]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LGCSANkEe6ssOa6OKTjIg">_F8CBA186-60C1-489A-9512-A558D6A00684_TaskNameInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jmANlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jmQNlEe6ssOa6OKTjIg"><![CDATA[Email]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jmgNlEe6ssOa6OKTjIg">_F8CBA186-60C1-489A-9512-A558D6A00684_TaskNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
     </bpmn2:task>
     <bpmn2:task id="_61521014-8790-4DAC-8E3E-40721195B9A5" drools:taskName="Email" name="Enviar Notificacion Recordatorio Tarea">
-      <bpmn2:documentation id="_1LGCSQNkEe6ssOa6OKTjIg"><![CDATA[jbpm-workitems-email/index.html]]></bpmn2:documentation>
+      <bpmn2:documentation id="_DC8jmwNlEe6ssOa6OKTjIg"><![CDATA[jbpm-workitems-email/index.html]]></bpmn2:documentation>
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
           <drools:metaValue><![CDATA[Enviar Notificacion Recordatorio Tarea]]></drools:metaValue>
@@ -1366,7 +1366,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
       </bpmn2:extensionElements>
       <bpmn2:incoming>_20C2FC28-C19D-4ACB-A821-48CB136B4DE3</bpmn2:incoming>
       <bpmn2:outgoing>_83B2739D-FE94-45E0-BE52-6B401630E4E2</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_1LGCSgNkEe6ssOa6OKTjIg">
+      <bpmn2:ioSpecification id="_DC8jnANlEe6ssOa6OKTjIg">
         <bpmn2:dataInput id="_61521014-8790-4DAC-8E3E-40721195B9A5_FromInputX" drools:dtype="String" itemSubjectRef="__61521014-8790-4DAC-8E3E-40721195B9A5_FromInputXItem" name="From"/>
         <bpmn2:dataInput id="_61521014-8790-4DAC-8E3E-40721195B9A5_SubjectInputX" drools:dtype="String" itemSubjectRef="__61521014-8790-4DAC-8E3E-40721195B9A5_SubjectInputXItem" name="Subject"/>
         <bpmn2:dataInput id="_61521014-8790-4DAC-8E3E-40721195B9A5_TemplateInputX" drools:dtype="String" itemSubjectRef="__61521014-8790-4DAC-8E3E-40721195B9A5_TemplateInputXItem" name="Template"/>
@@ -1380,7 +1380,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
         <bpmn2:dataInput id="_61521014-8790-4DAC-8E3E-40721195B9A5_DebugInputX" drools:dtype="String" itemSubjectRef="__61521014-8790-4DAC-8E3E-40721195B9A5_DebugInputXItem" name="Debug"/>
         <bpmn2:dataInput id="_61521014-8790-4DAC-8E3E-40721195B9A5_Reply-ToInputX" drools:dtype="String" itemSubjectRef="__61521014-8790-4DAC-8E3E-40721195B9A5_Reply-ToInputXItem" name="Reply-To"/>
         <bpmn2:dataInput id="_61521014-8790-4DAC-8E3E-40721195B9A5_TaskNameInputX" drools:dtype="Object" name="TaskName"/>
-        <bpmn2:inputSet id="_1LGCSwNkEe6ssOa6OKTjIg">
+        <bpmn2:inputSet id="_DC8jnQNlEe6ssOa6OKTjIg">
           <bpmn2:dataInputRefs>_61521014-8790-4DAC-8E3E-40721195B9A5_FromInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_61521014-8790-4DAC-8E3E-40721195B9A5_SubjectInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_61521014-8790-4DAC-8E3E-40721195B9A5_TemplateInputX</bpmn2:dataInputRefs>
@@ -1395,52 +1395,52 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
           <bpmn2:dataInputRefs>_61521014-8790-4DAC-8E3E-40721195B9A5_Reply-ToInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_61521014-8790-4DAC-8E3E-40721195B9A5_TaskNameInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="_1LGCTANkEe6ssOa6OKTjIg"/>
+        <bpmn2:outputSet id="_DC8jngNlEe6ssOa6OKTjIg"/>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_1LGCTQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jnwNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_61521014-8790-4DAC-8E3E-40721195B9A5_FromInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LGCTgNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LGCTwNkEe6ssOa6OKTjIg"><![CDATA[direccion.cis@unl.edu.ec]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LGCUANkEe6ssOa6OKTjIg">_61521014-8790-4DAC-8E3E-40721195B9A5_FromInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8joANlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8joQNlEe6ssOa6OKTjIg"><![CDATA[direccion.cis@unl.edu.ec]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jogNlEe6ssOa6OKTjIg">_61521014-8790-4DAC-8E3E-40721195B9A5_FromInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCUQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jowNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_61521014-8790-4DAC-8E3E-40721195B9A5_SubjectInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LGCUgNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LGCUwNkEe6ssOa6OKTjIg"><![CDATA[Tramite de Record Academico, revisar tareas por hacer]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LGCVANkEe6ssOa6OKTjIg">_61521014-8790-4DAC-8E3E-40721195B9A5_SubjectInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jpANlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jpQNlEe6ssOa6OKTjIg"><![CDATA[Tramite de Record Academico, revisar tareas por hacer]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jpgNlEe6ssOa6OKTjIg">_61521014-8790-4DAC-8E3E-40721195B9A5_SubjectInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCVQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jpwNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_61521014-8790-4DAC-8E3E-40721195B9A5_TemplateInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LGCVgNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LGCVwNkEe6ssOa6OKTjIg"><![CDATA[Plantilla Recordatorio Tarea]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LGCWANkEe6ssOa6OKTjIg">_61521014-8790-4DAC-8E3E-40721195B9A5_TemplateInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jqANlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jqQNlEe6ssOa6OKTjIg"><![CDATA[Plantilla Recordatorio Tarea]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jqgNlEe6ssOa6OKTjIg">_61521014-8790-4DAC-8E3E-40721195B9A5_TemplateInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCWQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jqwNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_61521014-8790-4DAC-8E3E-40721195B9A5_ToInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LGCWgNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LGCWwNkEe6ssOa6OKTjIg"><![CDATA[secretaria.cis@unl.edu.ec]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LGCXANkEe6ssOa6OKTjIg">_61521014-8790-4DAC-8E3E-40721195B9A5_ToInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jrANlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jrQNlEe6ssOa6OKTjIg"><![CDATA[secretaria.cis@unl.edu.ec]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jrgNlEe6ssOa6OKTjIg">_61521014-8790-4DAC-8E3E-40721195B9A5_ToInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCXQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jrwNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>initiator</bpmn2:sourceRef>
         <bpmn2:targetRef>_61521014-8790-4DAC-8E3E-40721195B9A5_initiatorInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCXgNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jsANlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_61521014-8790-4DAC-8E3E-40721195B9A5_taskNameInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LGCXwNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LGCYANkEe6ssOa6OKTjIg"><![CDATA[Revisar Documentación de Egresado]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LGCYQNkEe6ssOa6OKTjIg">_61521014-8790-4DAC-8E3E-40721195B9A5_taskNameInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jsQNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jsgNlEe6ssOa6OKTjIg"><![CDATA[Revisar Documentación de Egresado]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jswNlEe6ssOa6OKTjIg">_61521014-8790-4DAC-8E3E-40721195B9A5_taskNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCYgNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jtANlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_61521014-8790-4DAC-8E3E-40721195B9A5_TaskNameInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LGCYwNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LGCZANkEe6ssOa6OKTjIg"><![CDATA[Revisar Documentación de Egresado]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LGCZQNkEe6ssOa6OKTjIg">_61521014-8790-4DAC-8E3E-40721195B9A5_TaskNameInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jtQNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jtgNlEe6ssOa6OKTjIg"><![CDATA[Revisar Documentación de Egresado]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jtwNlEe6ssOa6OKTjIg">_61521014-8790-4DAC-8E3E-40721195B9A5_TaskNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
     </bpmn2:task>
@@ -1451,10 +1451,10 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
     </bpmn2:exclusiveGateway>
     <bpmn2:endEvent id="_F6607384-53AB-47A5-8DFC-5AA440FE2AE3">
       <bpmn2:incoming>_1DE73482-341A-401D-A110-294D4EAE4EC6</bpmn2:incoming>
-      <bpmn2:terminateEventDefinition id="_1LGCZgNkEe6ssOa6OKTjIg"/>
+      <bpmn2:terminateEventDefinition id="_DC8juANlEe6ssOa6OKTjIg"/>
     </bpmn2:endEvent>
     <bpmn2:task id="_DB4BB946-8484-4476-A5E3-802EC6C34397" drools:taskName="Email" name="Enviar Notificacion Recordatorio Tarea">
-      <bpmn2:documentation id="_1LGCZwNkEe6ssOa6OKTjIg"><![CDATA[jbpm-workitems-email/index.html]]></bpmn2:documentation>
+      <bpmn2:documentation id="_DC8juQNlEe6ssOa6OKTjIg"><![CDATA[jbpm-workitems-email/index.html]]></bpmn2:documentation>
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
           <drools:metaValue><![CDATA[Enviar Notificacion Recordatorio Tarea]]></drools:metaValue>
@@ -1462,7 +1462,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
       </bpmn2:extensionElements>
       <bpmn2:incoming>_6E209B35-1237-4AFE-8E33-E4D595B415A4</bpmn2:incoming>
       <bpmn2:outgoing>_09C93599-35A2-4764-A36B-9C43A82E94C1</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_1LGCaANkEe6ssOa6OKTjIg">
+      <bpmn2:ioSpecification id="_DC8jugNlEe6ssOa6OKTjIg">
         <bpmn2:dataInput id="_DB4BB946-8484-4476-A5E3-802EC6C34397_FromInputX" drools:dtype="String" itemSubjectRef="__DB4BB946-8484-4476-A5E3-802EC6C34397_FromInputXItem" name="From"/>
         <bpmn2:dataInput id="_DB4BB946-8484-4476-A5E3-802EC6C34397_SubjectInputX" drools:dtype="String" itemSubjectRef="__DB4BB946-8484-4476-A5E3-802EC6C34397_SubjectInputXItem" name="Subject"/>
         <bpmn2:dataInput id="_DB4BB946-8484-4476-A5E3-802EC6C34397_TemplateInputX" drools:dtype="String" itemSubjectRef="__DB4BB946-8484-4476-A5E3-802EC6C34397_TemplateInputXItem" name="Template"/>
@@ -1476,7 +1476,7 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
         <bpmn2:dataInput id="_DB4BB946-8484-4476-A5E3-802EC6C34397_DebugInputX" drools:dtype="String" itemSubjectRef="__DB4BB946-8484-4476-A5E3-802EC6C34397_DebugInputXItem" name="Debug"/>
         <bpmn2:dataInput id="_DB4BB946-8484-4476-A5E3-802EC6C34397_Reply-ToInputX" drools:dtype="String" itemSubjectRef="__DB4BB946-8484-4476-A5E3-802EC6C34397_Reply-ToInputXItem" name="Reply-To"/>
         <bpmn2:dataInput id="_DB4BB946-8484-4476-A5E3-802EC6C34397_TaskNameInputX" drools:dtype="Object" name="TaskName"/>
-        <bpmn2:inputSet id="_1LGCaQNkEe6ssOa6OKTjIg">
+        <bpmn2:inputSet id="_DC8juwNlEe6ssOa6OKTjIg">
           <bpmn2:dataInputRefs>_DB4BB946-8484-4476-A5E3-802EC6C34397_FromInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_DB4BB946-8484-4476-A5E3-802EC6C34397_SubjectInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_DB4BB946-8484-4476-A5E3-802EC6C34397_TemplateInputX</bpmn2:dataInputRefs>
@@ -1491,57 +1491,57 @@ solicitud de Récord Académico, Derecho Académico (se consigue en Tesorería d
           <bpmn2:dataInputRefs>_DB4BB946-8484-4476-A5E3-802EC6C34397_Reply-ToInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_DB4BB946-8484-4476-A5E3-802EC6C34397_TaskNameInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="_1LGCagNkEe6ssOa6OKTjIg"/>
+        <bpmn2:outputSet id="_DC8jvANlEe6ssOa6OKTjIg"/>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_1LGCawNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jvQNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_DB4BB946-8484-4476-A5E3-802EC6C34397_FromInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LGCbANkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LGCbQNkEe6ssOa6OKTjIg"><![CDATA[direccion.cis@unl.edu.ec]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LGCbgNkEe6ssOa6OKTjIg">_DB4BB946-8484-4476-A5E3-802EC6C34397_FromInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jvgNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jvwNlEe6ssOa6OKTjIg"><![CDATA[direccion.cis@unl.edu.ec]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jwANlEe6ssOa6OKTjIg">_DB4BB946-8484-4476-A5E3-802EC6C34397_FromInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCbwNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jwQNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_DB4BB946-8484-4476-A5E3-802EC6C34397_SubjectInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LGCcANkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LGCcQNkEe6ssOa6OKTjIg"><![CDATA[Tramite de Record Academico, revisar tareas por hacer]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LGCcgNkEe6ssOa6OKTjIg">_DB4BB946-8484-4476-A5E3-802EC6C34397_SubjectInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jwgNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jwwNlEe6ssOa6OKTjIg"><![CDATA[Tramite de Record Academico, revisar tareas por hacer]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jxANlEe6ssOa6OKTjIg">_DB4BB946-8484-4476-A5E3-802EC6C34397_SubjectInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCcwNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jxQNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_DB4BB946-8484-4476-A5E3-802EC6C34397_TemplateInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LGCdANkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LGCdQNkEe6ssOa6OKTjIg"><![CDATA[Plantilla Recordatorio Tarea]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LGCdgNkEe6ssOa6OKTjIg">_DB4BB946-8484-4476-A5E3-802EC6C34397_TemplateInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jxgNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jxwNlEe6ssOa6OKTjIg"><![CDATA[Plantilla Recordatorio Tarea]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jyANlEe6ssOa6OKTjIg">_DB4BB946-8484-4476-A5E3-802EC6C34397_TemplateInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCdwNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jyQNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_DB4BB946-8484-4476-A5E3-802EC6C34397_ToInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LGCeANkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LGCeQNkEe6ssOa6OKTjIg"><![CDATA[secretaria.cis@unl.edu.ec]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LGCegNkEe6ssOa6OKTjIg">_DB4BB946-8484-4476-A5E3-802EC6C34397_ToInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jygNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8jywNlEe6ssOa6OKTjIg"><![CDATA[secretaria.cis@unl.edu.ec]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8jzANlEe6ssOa6OKTjIg">_DB4BB946-8484-4476-A5E3-802EC6C34397_ToInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCewNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jzQNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>initiator</bpmn2:sourceRef>
         <bpmn2:targetRef>_DB4BB946-8484-4476-A5E3-802EC6C34397_initiatorInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCfANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8jzgNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_DB4BB946-8484-4476-A5E3-802EC6C34397_taskNameInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LGCfQNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LGCfgNkEe6ssOa6OKTjIg"><![CDATA[Revisar Documentación de Egresado]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LGCfwNkEe6ssOa6OKTjIg">_DB4BB946-8484-4476-A5E3-802EC6C34397_taskNameInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8jzwNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8j0ANlEe6ssOa6OKTjIg"><![CDATA[Revisar Documentación de Egresado]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8j0QNlEe6ssOa6OKTjIg">_DB4BB946-8484-4476-A5E3-802EC6C34397_taskNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCgANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8j0gNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_DB4BB946-8484-4476-A5E3-802EC6C34397_TaskNameInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LGCgQNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LGCggNkEe6ssOa6OKTjIg"><![CDATA[Revisar Documentación de Egresado]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LGCgwNkEe6ssOa6OKTjIg">_DB4BB946-8484-4476-A5E3-802EC6C34397_TaskNameInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8j0wNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8j1ANlEe6ssOa6OKTjIg"><![CDATA[Revisar Documentación de Egresado]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8j1QNlEe6ssOa6OKTjIg">_DB4BB946-8484-4476-A5E3-802EC6C34397_TaskNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
     </bpmn2:task>
     <bpmn2:task id="_11543EDF-BCF0-4867-B3B0-0C715CED07DF" drools:taskName="Email" name="Enviar Record Academico">
-      <bpmn2:documentation id="_1LGChANkEe6ssOa6OKTjIg"><![CDATA[jbpm-workitems-email/index.html]]></bpmn2:documentation>
+      <bpmn2:documentation id="_DC8j1gNlEe6ssOa6OKTjIg"><![CDATA[jbpm-workitems-email/index.html]]></bpmn2:documentation>
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
           <drools:metaValue><![CDATA[Enviar Record Academico]]></drools:metaValue>
@@ -1558,7 +1558,7 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
       </bpmn2:extensionElements>
       <bpmn2:incoming>_1369A662-B77A-4D5B-B282-B858DF57E476</bpmn2:incoming>
       <bpmn2:outgoing>_1DE73482-341A-401D-A110-294D4EAE4EC6</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_1LGChQNkEe6ssOa6OKTjIg">
+      <bpmn2:ioSpecification id="_DC8j1wNlEe6ssOa6OKTjIg">
         <bpmn2:dataInput id="_11543EDF-BCF0-4867-B3B0-0C715CED07DF_FromInputX" drools:dtype="String" itemSubjectRef="__11543EDF-BCF0-4867-B3B0-0C715CED07DF_FromInputXItem" name="From"/>
         <bpmn2:dataInput id="_11543EDF-BCF0-4867-B3B0-0C715CED07DF_ToInputX" drools:dtype="String" itemSubjectRef="__11543EDF-BCF0-4867-B3B0-0C715CED07DF_ToInputXItem" name="To"/>
         <bpmn2:dataInput id="_11543EDF-BCF0-4867-B3B0-0C715CED07DF_SubjectInputX" drools:dtype="String" itemSubjectRef="__11543EDF-BCF0-4867-B3B0-0C715CED07DF_SubjectInputXItem" name="Subject"/>
@@ -1571,7 +1571,7 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
         <bpmn2:dataInput id="_11543EDF-BCF0-4867-B3B0-0C715CED07DF_DebugInputX" drools:dtype="String" itemSubjectRef="__11543EDF-BCF0-4867-B3B0-0C715CED07DF_DebugInputXItem" name="Debug"/>
         <bpmn2:dataInput id="_11543EDF-BCF0-4867-B3B0-0C715CED07DF_Reply-ToInputX" drools:dtype="String" itemSubjectRef="__11543EDF-BCF0-4867-B3B0-0C715CED07DF_Reply-ToInputXItem" name="Reply-To"/>
         <bpmn2:dataInput id="_11543EDF-BCF0-4867-B3B0-0C715CED07DF_TaskNameInputX" drools:dtype="Object" name="TaskName"/>
-        <bpmn2:inputSet id="_1LGChgNkEe6ssOa6OKTjIg">
+        <bpmn2:inputSet id="_DC8j2ANlEe6ssOa6OKTjIg">
           <bpmn2:dataInputRefs>_11543EDF-BCF0-4867-B3B0-0C715CED07DF_FromInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_11543EDF-BCF0-4867-B3B0-0C715CED07DF_ToInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_11543EDF-BCF0-4867-B3B0-0C715CED07DF_SubjectInputX</bpmn2:dataInputRefs>
@@ -1585,56 +1585,56 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
           <bpmn2:dataInputRefs>_11543EDF-BCF0-4867-B3B0-0C715CED07DF_Reply-ToInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_11543EDF-BCF0-4867-B3B0-0C715CED07DF_TaskNameInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="_1LGChwNkEe6ssOa6OKTjIg"/>
+        <bpmn2:outputSet id="_DC8j2QNlEe6ssOa6OKTjIg"/>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_1LGCiANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8j2gNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_11543EDF-BCF0-4867-B3B0-0C715CED07DF_FromInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LGCiQNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LGCigNkEe6ssOa6OKTjIg"><![CDATA[direccion.cis@unl.edu.ec]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LGCiwNkEe6ssOa6OKTjIg">_11543EDF-BCF0-4867-B3B0-0C715CED07DF_FromInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8j2wNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8j3ANlEe6ssOa6OKTjIg"><![CDATA[direccion.cis@unl.edu.ec]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8j3QNlEe6ssOa6OKTjIg">_11543EDF-BCF0-4867-B3B0-0C715CED07DF_FromInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCjANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8j3gNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_11543EDF-BCF0-4867-B3B0-0C715CED07DF_ToInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LGCjQNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LGCjgNkEe6ssOa6OKTjIg"><![CDATA[#{initiator}@gmail.com]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LGCjwNkEe6ssOa6OKTjIg">_11543EDF-BCF0-4867-B3B0-0C715CED07DF_ToInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8j3wNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8j4ANlEe6ssOa6OKTjIg"><![CDATA[#{initiator}@gmail.com]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8j4QNlEe6ssOa6OKTjIg">_11543EDF-BCF0-4867-B3B0-0C715CED07DF_ToInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCkANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8j4gNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_11543EDF-BCF0-4867-B3B0-0C715CED07DF_SubjectInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LGCkQNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LGCkgNkEe6ssOa6OKTjIg"><![CDATA[Tramite de Récord Académico Generado con Éxito]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LGCkwNkEe6ssOa6OKTjIg">_11543EDF-BCF0-4867-B3B0-0C715CED07DF_SubjectInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8j4wNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8j5ANlEe6ssOa6OKTjIg"><![CDATA[Tramite de Récord Académico Generado con Éxito]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8j5QNlEe6ssOa6OKTjIg">_11543EDF-BCF0-4867-B3B0-0C715CED07DF_SubjectInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGClANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8j5gNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_11543EDF-BCF0-4867-B3B0-0C715CED07DF_TemplateInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LGClQNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LGClgNkEe6ssOa6OKTjIg"><![CDATA[Plantilla Recordatorio Finalizar]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LGClwNkEe6ssOa6OKTjIg">_11543EDF-BCF0-4867-B3B0-0C715CED07DF_TemplateInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8j5wNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8j6ANlEe6ssOa6OKTjIg"><![CDATA[Plantilla Recordatorio Finalizar]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8j6QNlEe6ssOa6OKTjIg">_11543EDF-BCF0-4867-B3B0-0C715CED07DF_TemplateInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCmANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8j6gNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>initiator</bpmn2:sourceRef>
         <bpmn2:targetRef>_11543EDF-BCF0-4867-B3B0-0C715CED07DF_initiatorInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCmQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8j6wNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_11543EDF-BCF0-4867-B3B0-0C715CED07DF_CcInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LGCmgNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LGCmwNkEe6ssOa6OKTjIg"><![CDATA[secretaria.cis@unl.edu.ec]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LGCnANkEe6ssOa6OKTjIg">_11543EDF-BCF0-4867-B3B0-0C715CED07DF_CcInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8j7ANlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8j7QNlEe6ssOa6OKTjIg"><![CDATA[secretaria.cis@unl.edu.ec]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8j7gNlEe6ssOa6OKTjIg">_11543EDF-BCF0-4867-B3B0-0C715CED07DF_CcInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCnQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8j7wNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>pathPDF</bpmn2:sourceRef>
         <bpmn2:targetRef>_11543EDF-BCF0-4867-B3B0-0C715CED07DF_AttachmentsInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCngNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8j8ANlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_11543EDF-BCF0-4867-B3B0-0C715CED07DF_TaskNameInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LGCnwNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LGCoANkEe6ssOa6OKTjIg"><![CDATA[Email]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LGCoQNkEe6ssOa6OKTjIg">_11543EDF-BCF0-4867-B3B0-0C715CED07DF_TaskNameInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8j8QNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8j8gNlEe6ssOa6OKTjIg"><![CDATA[Email]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8j8wNlEe6ssOa6OKTjIg">_11543EDF-BCF0-4867-B3B0-0C715CED07DF_TaskNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
     </bpmn2:task>
@@ -1652,7 +1652,7 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
       <bpmn2:outgoing>_AF953A1B-5DF9-48CB-A2D3-4D72099DF8D7</bpmn2:outgoing>
     </bpmn2:exclusiveGateway>
     <bpmn2:task id="_B5F5FB92-9B0F-4176-AA4F-AB6BF1F811DB" drools:taskName="GeneratePDF" name="GeneratePDF">
-      <bpmn2:documentation id="_1LGCogNkEe6ssOa6OKTjIg"><![CDATA[pdf-workitem/index.html]]></bpmn2:documentation>
+      <bpmn2:documentation id="_DC8j9ANlEe6ssOa6OKTjIg"><![CDATA[pdf-workitem/index.html]]></bpmn2:documentation>
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
           <drools:metaValue><![CDATA[GeneratePDF]]></drools:metaValue>
@@ -1660,48 +1660,48 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
       </bpmn2:extensionElements>
       <bpmn2:incoming>_D55C49F0-C128-423B-BC04-EAE64C0BD086</bpmn2:incoming>
       <bpmn2:outgoing>_F1DCC0CC-3733-43C1-8941-B8477F4F2F22</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_1LGCowNkEe6ssOa6OKTjIg">
+      <bpmn2:ioSpecification id="_DC8j9QNlEe6ssOa6OKTjIg">
         <bpmn2:dataInput id="_B5F5FB92-9B0F-4176-AA4F-AB6BF1F811DB_PDFNameInputX" drools:dtype="String" itemSubjectRef="__B5F5FB92-9B0F-4176-AA4F-AB6BF1F811DB_PDFNameInputXItem" name="PDFName"/>
         <bpmn2:dataInput id="_B5F5FB92-9B0F-4176-AA4F-AB6BF1F811DB_TemplateXHTMLInputX" drools:dtype="String" itemSubjectRef="__B5F5FB92-9B0F-4176-AA4F-AB6BF1F811DB_TemplateXHTMLInputXItem" name="TemplateXHTML"/>
         <bpmn2:dataInput id="_B5F5FB92-9B0F-4176-AA4F-AB6BF1F811DB_nombresInputX" drools:dtype="String" itemSubjectRef="__B5F5FB92-9B0F-4176-AA4F-AB6BF1F811DB_nombresInputXItem" name="nombres"/>
         <bpmn2:dataInput id="_B5F5FB92-9B0F-4176-AA4F-AB6BF1F811DB_TaskNameInputX" drools:dtype="Object" name="TaskName"/>
         <bpmn2:dataOutput id="_B5F5FB92-9B0F-4176-AA4F-AB6BF1F811DB_PDFDocumentOutputX" drools:dtype="String" itemSubjectRef="__B5F5FB92-9B0F-4176-AA4F-AB6BF1F811DB_PDFDocumentOutputXItem" name="PDFDocument"/>
-        <bpmn2:inputSet id="_1LGCpANkEe6ssOa6OKTjIg">
+        <bpmn2:inputSet id="_DC8j9gNlEe6ssOa6OKTjIg">
           <bpmn2:dataInputRefs>_B5F5FB92-9B0F-4176-AA4F-AB6BF1F811DB_PDFNameInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_B5F5FB92-9B0F-4176-AA4F-AB6BF1F811DB_TemplateXHTMLInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_B5F5FB92-9B0F-4176-AA4F-AB6BF1F811DB_nombresInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_B5F5FB92-9B0F-4176-AA4F-AB6BF1F811DB_TaskNameInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="_1LGCpQNkEe6ssOa6OKTjIg">
+        <bpmn2:outputSet id="_DC8j9wNlEe6ssOa6OKTjIg">
           <bpmn2:dataOutputRefs>_B5F5FB92-9B0F-4176-AA4F-AB6BF1F811DB_PDFDocumentOutputX</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_1LGCpgNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8j-ANlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_B5F5FB92-9B0F-4176-AA4F-AB6BF1F811DB_PDFNameInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LGCpwNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LGCqANkEe6ssOa6OKTjIg"><![CDATA[example]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LGCqQNkEe6ssOa6OKTjIg">_B5F5FB92-9B0F-4176-AA4F-AB6BF1F811DB_PDFNameInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8j-QNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8j-gNlEe6ssOa6OKTjIg"><![CDATA[example]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8j-wNlEe6ssOa6OKTjIg">_B5F5FB92-9B0F-4176-AA4F-AB6BF1F811DB_PDFNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCqgNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8j_ANlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_B5F5FB92-9B0F-4176-AA4F-AB6BF1F811DB_TemplateXHTMLInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LGCqwNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LGCrANkEe6ssOa6OKTjIg"><![CDATA[<!DOCTYPE html> <html>  <head>     <meta charset="UTF-8"> </meta>     <title>Plantilla XHTML</title> </head>  <body>     <h1>Bienvenido(a), ${nombres}</h1>     <p>Gracias por utilizar nuestra aplicación.</p> </body>  </html>]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LGCrQNkEe6ssOa6OKTjIg">_B5F5FB92-9B0F-4176-AA4F-AB6BF1F811DB_TemplateXHTMLInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8j_QNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8j_gNlEe6ssOa6OKTjIg"><![CDATA[<!DOCTYPE html> <html>  <head>     <meta charset="UTF-8"> </meta>     <title>Plantilla XHTML</title> </head>  <body>     <h1>Bienvenido(a), ${nombres}</h1>     <p>Gracias por utilizar nuestra aplicación.</p> </body>  </html>]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8j_wNlEe6ssOa6OKTjIg">_B5F5FB92-9B0F-4176-AA4F-AB6BF1F811DB_TemplateXHTMLInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCrgNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8kAANlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>nombres</bpmn2:sourceRef>
         <bpmn2:targetRef>_B5F5FB92-9B0F-4176-AA4F-AB6BF1F811DB_nombresInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCrwNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8kAQNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_B5F5FB92-9B0F-4176-AA4F-AB6BF1F811DB_TaskNameInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LGCsANkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LGCsQNkEe6ssOa6OKTjIg"><![CDATA[GeneratePDF]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LGCsgNkEe6ssOa6OKTjIg">_B5F5FB92-9B0F-4176-AA4F-AB6BF1F811DB_TaskNameInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8kAgNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8kAwNlEe6ssOa6OKTjIg"><![CDATA[GeneratePDF]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8kBANlEe6ssOa6OKTjIg">_B5F5FB92-9B0F-4176-AA4F-AB6BF1F811DB_TaskNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataOutputAssociation id="_1LGCswNkEe6ssOa6OKTjIg">
+      <bpmn2:dataOutputAssociation id="_DC8kBQNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>_B5F5FB92-9B0F-4176-AA4F-AB6BF1F811DB_PDFDocumentOutputX</bpmn2:sourceRef>
         <bpmn2:targetRef>recordAcademicoLegalizado</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
@@ -1717,7 +1717,7 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
       <bpmn2:outgoing>_91075235-568C-410D-8F02-D60DC4824BB8</bpmn2:outgoing>
     </bpmn2:exclusiveGateway>
     <bpmn2:userTask id="_1068C8DB-2AD4-4065-AC95-5680C5AAF36A" name="Revisar Documentacion de Graduado">
-      <bpmn2:documentation id="_1LGCtANkEe6ssOa6OKTjIg"><![CDATA[La secretaria de la Carrera de Ingeniería en Sistemas/Computación se encargada de revisar los documentos y de ser necesario puede enviar comentarios en el caso que los documentos no sean los correctos]]></bpmn2:documentation>
+      <bpmn2:documentation id="_DC8kBgNlEe6ssOa6OKTjIg"><![CDATA[La secretaria de la Carrera de Ingeniería en Sistemas/Computación se encargada de revisar los documentos y de ser necesario puede enviar comentarios en el caso que los documentos no sean los correctos]]></bpmn2:documentation>
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
           <drools:metaValue><![CDATA[Revisar Documentacion de Graduado]]></drools:metaValue>
@@ -1725,7 +1725,7 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
       </bpmn2:extensionElements>
       <bpmn2:incoming>_0F6CBEFD-1F4F-4ED0-9475-3790630B9981</bpmn2:incoming>
       <bpmn2:outgoing>_A6C523B1-2FFC-4680-8D4B-3F484ACA038D</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_1LGCtQNkEe6ssOa6OKTjIg">
+      <bpmn2:ioSpecification id="_DC8kBwNlEe6ssOa6OKTjIg">
         <bpmn2:dataInput id="_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_TaskNameInputX" drools:dtype="Object" itemSubjectRef="__1068C8DB-2AD4-4065-AC95-5680C5AAF36A_TaskNameInputXItem" name="TaskName"/>
         <bpmn2:dataInput id="_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_solicitudRecordAcademicoInputX" drools:dtype="org.jbpm.document.Document" itemSubjectRef="__1068C8DB-2AD4-4065-AC95-5680C5AAF36A_solicitudRecordAcademicoInputXItem" name="solicitudRecordAcademico"/>
         <bpmn2:dataInput id="_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_derechoAcademicoInputX" drools:dtype="org.jbpm.document.Document" itemSubjectRef="__1068C8DB-2AD4-4065-AC95-5680C5AAF36A_derechoAcademicoInputXItem" name="derechoAcademico"/>
@@ -1737,7 +1737,7 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
         <bpmn2:dataInput id="_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_DescriptionInputX" drools:dtype="Object" itemSubjectRef="__1068C8DB-2AD4-4065-AC95-5680C5AAF36A_DescriptionInputXItem" name="Description"/>
         <bpmn2:dataOutput id="_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_esCorrectaDocumentacionOutputX" drools:dtype="Boolean" itemSubjectRef="__1068C8DB-2AD4-4065-AC95-5680C5AAF36A_esCorrectaDocumentacionOutputXItem" name="esCorrectaDocumentacion"/>
         <bpmn2:dataOutput id="_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_comentarioOutputX" drools:dtype="String" itemSubjectRef="__1068C8DB-2AD4-4065-AC95-5680C5AAF36A_comentarioOutputXItem" name="comentario"/>
-        <bpmn2:inputSet id="_1LGCtgNkEe6ssOa6OKTjIg">
+        <bpmn2:inputSet id="_DC8kCANlEe6ssOa6OKTjIg">
           <bpmn2:dataInputRefs>_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_TaskNameInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_solicitudRecordAcademicoInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_derechoAcademicoInputX</bpmn2:dataInputRefs>
@@ -1748,71 +1748,71 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
           <bpmn2:dataInputRefs>_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_GroupIdInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_DescriptionInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="_1LGCtwNkEe6ssOa6OKTjIg">
+        <bpmn2:outputSet id="_DC8kCQNlEe6ssOa6OKTjIg">
           <bpmn2:dataOutputRefs>_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_esCorrectaDocumentacionOutputX</bpmn2:dataOutputRefs>
           <bpmn2:dataOutputRefs>_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_comentarioOutputX</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_1LGCuANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8kCgNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_TaskNameInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LGCuQNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LGCugNkEe6ssOa6OKTjIg"><![CDATA[RevisarDocumentacionGraduado]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LGCuwNkEe6ssOa6OKTjIg">_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_TaskNameInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8kCwNlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8kDANlEe6ssOa6OKTjIg"><![CDATA[RevisarDocumentacionGraduado]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8kDQNlEe6ssOa6OKTjIg">_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_TaskNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCvANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8kDgNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>solicitudRecordAcademico</bpmn2:sourceRef>
         <bpmn2:targetRef>_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_solicitudRecordAcademicoInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCvQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8kDwNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>derechoAcademico</bpmn2:sourceRef>
         <bpmn2:targetRef>_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_derechoAcademicoInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCvgNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8kEANlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>copiaCedula</bpmn2:sourceRef>
         <bpmn2:targetRef>_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_copiaCedulaInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCvwNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8kEQNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>anioComienzo</bpmn2:sourceRef>
         <bpmn2:targetRef>_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_anioComienzoInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCwANkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8kEgNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>nombres</bpmn2:sourceRef>
         <bpmn2:targetRef>_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_nombreInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCwQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8kEwNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_SkippableInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LGCwgNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LGCwwNkEe6ssOa6OKTjIg"><![CDATA[false]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LGCxANkEe6ssOa6OKTjIg">_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_SkippableInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8kFANlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8kFQNlEe6ssOa6OKTjIg"><![CDATA[false]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8kFgNlEe6ssOa6OKTjIg">_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_SkippableInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCxQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8kFwNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_GroupIdInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LGCxgNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LGCxwNkEe6ssOa6OKTjIg"><![CDATA[Administrativo-Carrera-CIS-C]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LGCyANkEe6ssOa6OKTjIg">_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_GroupIdInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8kGANlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8kGQNlEe6ssOa6OKTjIg"><![CDATA[Administrativo-Carrera-CIS-C]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8kGgNlEe6ssOa6OKTjIg">_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_GroupIdInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_1LGCyQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataInputAssociation id="_DC8kGwNlEe6ssOa6OKTjIg">
         <bpmn2:targetRef>_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_DescriptionInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_1LGCygNkEe6ssOa6OKTjIg">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_1LGCywNkEe6ssOa6OKTjIg"><![CDATA[Revisar Documentación de #{initiator}]]></bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_1LGCzANkEe6ssOa6OKTjIg">_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_DescriptionInputX</bpmn2:to>
+        <bpmn2:assignment id="_DC8kHANlEe6ssOa6OKTjIg">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_DC8kHQNlEe6ssOa6OKTjIg"><![CDATA[Revisar Documentación de #{initiator}]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_DC8kHgNlEe6ssOa6OKTjIg">_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_DescriptionInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataOutputAssociation id="_1LGCzQNkEe6ssOa6OKTjIg">
+      <bpmn2:dataOutputAssociation id="_DC8kHwNlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_esCorrectaDocumentacionOutputX</bpmn2:sourceRef>
         <bpmn2:targetRef>esCorrectaDocumentacion</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
-      <bpmn2:dataOutputAssociation id="_1LGCzgNkEe6ssOa6OKTjIg">
+      <bpmn2:dataOutputAssociation id="_DC8kIANlEe6ssOa6OKTjIg">
         <bpmn2:sourceRef>_1068C8DB-2AD4-4065-AC95-5680C5AAF36A_comentarioOutputX</bpmn2:sourceRef>
         <bpmn2:targetRef>comentario</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
     </bpmn2:userTask>
     <bpmn2:endEvent id="_B77117C5-5099-47E6-BF8F-DBF3E7034D59">
       <bpmn2:incoming>_B59BBE84-0544-46E5-A16C-41A8F3E7B4F1</bpmn2:incoming>
-      <bpmn2:terminateEventDefinition id="_1LGCzwNkEe6ssOa6OKTjIg"/>
+      <bpmn2:terminateEventDefinition id="_DC8kIQNlEe6ssOa6OKTjIg"/>
     </bpmn2:endEvent>
     <bpmn2:boundaryEvent id="_FACA6437-8E91-4020-BB92-F33321E0421C" drools:dockerinfo="126.0^-24.0|" drools:boundaryca="true" name="1 semana" attachedToRef="_2A3F9959-9136-4660-BC6E-A3424850FE2B">
       <bpmn2:extensionElements>
@@ -1821,8 +1821,8 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
         </drools:metaData>
       </bpmn2:extensionElements>
       <bpmn2:outgoing>_2310D0D6-330D-4345-A755-600223C2FBAD</bpmn2:outgoing>
-      <bpmn2:timerEventDefinition id="_1LGC0ANkEe6ssOa6OKTjIg">
-        <bpmn2:timeDuration xsi:type="bpmn2:tFormalExpression" id="_1LGC0QNkEe6ssOa6OKTjIg">P0Y0M7DT0H0M0S</bpmn2:timeDuration>
+      <bpmn2:timerEventDefinition id="_DC8kIgNlEe6ssOa6OKTjIg">
+        <bpmn2:timeDuration xsi:type="bpmn2:tFormalExpression" id="_DC8kIwNlEe6ssOa6OKTjIg">P0Y0M7DT0H0M0S</bpmn2:timeDuration>
       </bpmn2:timerEventDefinition>
     </bpmn2:boundaryEvent>
     <bpmn2:boundaryEvent id="_833EF4AE-339A-4154-9D9E-7F9BBF12008B" drools:dockerinfo="126.0^66.6|" drools:boundaryca="false" name="1 semana" attachedToRef="_1068C8DB-2AD4-4065-AC95-5680C5AAF36A" cancelActivity="false">
@@ -1832,8 +1832,8 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
         </drools:metaData>
       </bpmn2:extensionElements>
       <bpmn2:outgoing>_20C2FC28-C19D-4ACB-A821-48CB136B4DE3</bpmn2:outgoing>
-      <bpmn2:timerEventDefinition id="_1LGC0gNkEe6ssOa6OKTjIg">
-        <bpmn2:timeCycle xsi:type="bpmn2:tFormalExpression" id="_1LGC0wNkEe6ssOa6OKTjIg" language="none">R/P0Y0M7DT0H0M0S</bpmn2:timeCycle>
+      <bpmn2:timerEventDefinition id="_DC8kJANlEe6ssOa6OKTjIg">
+        <bpmn2:timeCycle xsi:type="bpmn2:tFormalExpression" id="_DC8kJQNlEe6ssOa6OKTjIg" language="none">R/P0Y0M7DT0H0M0S</bpmn2:timeCycle>
       </bpmn2:timerEventDefinition>
     </bpmn2:boundaryEvent>
     <bpmn2:boundaryEvent id="_9E948E27-0CCE-4B36-957C-EA355882F1B6" drools:dockerinfo="124.9^74.0|" drools:boundaryca="false" name="48 horas" attachedToRef="_68F5D1A8-5105-42F9-9A01-10446200265D" cancelActivity="false">
@@ -1843,8 +1843,8 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
         </drools:metaData>
       </bpmn2:extensionElements>
       <bpmn2:outgoing>_4770F79E-C155-44AB-AA5E-82DCD5629323</bpmn2:outgoing>
-      <bpmn2:timerEventDefinition id="_1LGC1ANkEe6ssOa6OKTjIg">
-        <bpmn2:timeCycle xsi:type="bpmn2:tFormalExpression" id="_1LGC1QNkEe6ssOa6OKTjIg" language="none">R/P0Y0M2DT0H0M0S</bpmn2:timeCycle>
+      <bpmn2:timerEventDefinition id="_DC8kJgNlEe6ssOa6OKTjIg">
+        <bpmn2:timeCycle xsi:type="bpmn2:tFormalExpression" id="_DC8kJwNlEe6ssOa6OKTjIg" language="none">R/P0Y0M2DT0H0M0S</bpmn2:timeCycle>
       </bpmn2:timerEventDefinition>
     </bpmn2:boundaryEvent>
     <bpmn2:boundaryEvent id="_87A6A9C5-0F78-42C6-898A-607669592E91" drools:dockerinfo="126.0^-21.9|" drools:boundaryca="false" name="1 semana" attachedToRef="_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6" cancelActivity="false">
@@ -1854,8 +1854,8 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
         </drools:metaData>
       </bpmn2:extensionElements>
       <bpmn2:outgoing>_93EBFB48-FAD6-4FD0-89ED-D517268F1EB1</bpmn2:outgoing>
-      <bpmn2:timerEventDefinition id="_1LGC1gNkEe6ssOa6OKTjIg">
-        <bpmn2:timeCycle xsi:type="bpmn2:tFormalExpression" id="_1LGC1wNkEe6ssOa6OKTjIg" language="none">R/P0Y0M7DT0H0M0S</bpmn2:timeCycle>
+      <bpmn2:timerEventDefinition id="_DC8kKANlEe6ssOa6OKTjIg">
+        <bpmn2:timeCycle xsi:type="bpmn2:tFormalExpression" id="_DC8kKQNlEe6ssOa6OKTjIg" language="none">R/P0Y0M7DT0H0M0S</bpmn2:timeCycle>
       </bpmn2:timerEventDefinition>
     </bpmn2:boundaryEvent>
     <bpmn2:boundaryEvent id="_1E369DEB-3689-49EA-BEC5-062B3F6B9359" drools:dockerinfo="126.0^60.0|" drools:boundaryca="false" name="48 horas" attachedToRef="_2A3F9959-9136-4660-BC6E-A3424850FE2B" cancelActivity="false">
@@ -1865,8 +1865,8 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
         </drools:metaData>
       </bpmn2:extensionElements>
       <bpmn2:outgoing>_688FAE28-15A9-4A63-86C1-764D5B55DA55</bpmn2:outgoing>
-      <bpmn2:timerEventDefinition id="_1LGC2ANkEe6ssOa6OKTjIg">
-        <bpmn2:timeCycle xsi:type="bpmn2:tFormalExpression" id="_1LGC2QNkEe6ssOa6OKTjIg" language="none">R/P0Y0M2DT0H0M0S</bpmn2:timeCycle>
+      <bpmn2:timerEventDefinition id="_DC8kKgNlEe6ssOa6OKTjIg">
+        <bpmn2:timeCycle xsi:type="bpmn2:tFormalExpression" id="_DC8kKwNlEe6ssOa6OKTjIg" language="none">R/P0Y0M2DT0H0M0S</bpmn2:timeCycle>
       </bpmn2:timerEventDefinition>
     </bpmn2:boundaryEvent>
     <bpmn2:boundaryEvent id="_7B0FBAA6-C008-4831-A4FB-5672987A172E" drools:dockerinfo="126.0^-21.9|" drools:boundaryca="false" name="1 semana" attachedToRef="_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC" cancelActivity="false">
@@ -1876,8 +1876,8 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
         </drools:metaData>
       </bpmn2:extensionElements>
       <bpmn2:outgoing>_7F3851A7-E3CD-400B-A7EE-8643E0670C2C</bpmn2:outgoing>
-      <bpmn2:timerEventDefinition id="_1LGC2gNkEe6ssOa6OKTjIg">
-        <bpmn2:timeCycle xsi:type="bpmn2:tFormalExpression" id="_1LGC2wNkEe6ssOa6OKTjIg" language="none">R/P0Y0M7DT0H0M0S</bpmn2:timeCycle>
+      <bpmn2:timerEventDefinition id="_DC8kLANlEe6ssOa6OKTjIg">
+        <bpmn2:timeCycle xsi:type="bpmn2:tFormalExpression" id="_DC8kLQNlEe6ssOa6OKTjIg" language="none">R/P0Y0M7DT0H0M0S</bpmn2:timeCycle>
       </bpmn2:timerEventDefinition>
     </bpmn2:boundaryEvent>
     <bpmn2:boundaryEvent id="_1B2FAD9D-9545-443D-95C1-2B943D1BE11A" drools:dockerinfo="126.0^-22.0|" drools:boundaryca="true" name="1 semana" attachedToRef="_68F5D1A8-5105-42F9-9A01-10446200265D">
@@ -1887,8 +1887,8 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
         </drools:metaData>
       </bpmn2:extensionElements>
       <bpmn2:outgoing>_F0974921-1000-43B7-8565-F2E74BD7DD74</bpmn2:outgoing>
-      <bpmn2:timerEventDefinition id="_1LGC3ANkEe6ssOa6OKTjIg">
-        <bpmn2:timeDuration xsi:type="bpmn2:tFormalExpression" id="_1LGC3QNkEe6ssOa6OKTjIg">P0Y0M7DT0H0M0S</bpmn2:timeDuration>
+      <bpmn2:timerEventDefinition id="_DC8kLgNlEe6ssOa6OKTjIg">
+        <bpmn2:timeDuration xsi:type="bpmn2:tFormalExpression" id="_DC8kLwNlEe6ssOa6OKTjIg">P0Y0M7DT0H0M0S</bpmn2:timeDuration>
       </bpmn2:timerEventDefinition>
     </bpmn2:boundaryEvent>
     <bpmn2:boundaryEvent id="_21BEE6AF-4DE9-4D71-8372-BB380722CC76" drools:dockerinfo="126.0^-27.0|" drools:boundaryca="false" name="1 semana" attachedToRef="_BC464F8D-4BED-4EF1-8887-9D01CA81EF73" cancelActivity="false">
@@ -1898,13 +1898,13 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
         </drools:metaData>
       </bpmn2:extensionElements>
       <bpmn2:outgoing>_6E209B35-1237-4AFE-8E33-E4D595B415A4</bpmn2:outgoing>
-      <bpmn2:timerEventDefinition id="_1LGC3gNkEe6ssOa6OKTjIg">
-        <bpmn2:timeCycle xsi:type="bpmn2:tFormalExpression" id="_1LGC3wNkEe6ssOa6OKTjIg" language="none">R/P0Y0M7DT0H0M0S</bpmn2:timeCycle>
+      <bpmn2:timerEventDefinition id="_DC8kMANlEe6ssOa6OKTjIg">
+        <bpmn2:timeCycle xsi:type="bpmn2:tFormalExpression" id="_DC8kMQNlEe6ssOa6OKTjIg" language="none">R/P0Y0M7DT0H0M0S</bpmn2:timeCycle>
       </bpmn2:timerEventDefinition>
     </bpmn2:boundaryEvent>
   </bpmn2:process>
-  <bpmndi:BPMNDiagram id="_1LGC4ANkEe6ssOa6OKTjIg">
-    <bpmndi:BPMNPlane id="_1LGC4QNkEe6ssOa6OKTjIg" bpmnElement="Record-Academico.RecordAcademico">
+  <bpmndi:BPMNDiagram id="_DC8kMgNlEe6ssOa6OKTjIg">
+    <bpmndi:BPMNPlane id="_DC8kMwNlEe6ssOa6OKTjIg" bpmnElement="Record-Academico.RecordAcademico">
       <bpmndi:BPMNShape id="shape_null" bpmnElement="_FACA6437-8E91-4020-BB92-F33321E0421C">
         <dc:Bounds height="56.0" width="56.0" x="871.0" y="227.0"/>
       </bpmndi:BPMNShape>
@@ -2169,12 +2169,12 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
-  <bpmn2:relationship id="_1LGC4gNkEe6ssOa6OKTjIg" type="BPSimData">
+  <bpmn2:relationship id="_DC8kNANlEe6ssOa6OKTjIg" type="BPSimData">
     <bpmn2:extensionElements>
       <bpsim:BPSimData>
         <bpsim:Scenario xsi:type="bpsim:Scenario" id="default" name="Simulationscenario">
           <bpsim:ScenarioParameters xsi:type="bpsim:ScenarioParameters"/>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_1068C8DB-2AD4-4065-AC95-5680C5AAF36A" id="_1LGC4wNkEe6ssOa6OKTjIg">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_1068C8DB-2AD4-4065-AC95-5680C5AAF36A" id="_DC8kNQNlEe6ssOa6OKTjIg">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -2194,7 +2194,7 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
               </bpsim:UnitCost>
             </bpsim:CostParameters>
           </bpsim:ElementParameters>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_B5F5FB92-9B0F-4176-AA4F-AB6BF1F811DB" id="_1LGC5ANkEe6ssOa6OKTjIg">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_B5F5FB92-9B0F-4176-AA4F-AB6BF1F811DB" id="_DC8kNgNlEe6ssOa6OKTjIg">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -2214,7 +2214,7 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
               </bpsim:UnitCost>
             </bpsim:CostParameters>
           </bpsim:ElementParameters>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_11543EDF-BCF0-4867-B3B0-0C715CED07DF" id="_1LGC5QNkEe6ssOa6OKTjIg">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_11543EDF-BCF0-4867-B3B0-0C715CED07DF" id="_DC8kNwNlEe6ssOa6OKTjIg">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -2234,7 +2234,7 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
               </bpsim:UnitCost>
             </bpsim:CostParameters>
           </bpsim:ElementParameters>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_DB4BB946-8484-4476-A5E3-802EC6C34397" id="_1LGC5gNkEe6ssOa6OKTjIg">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_DB4BB946-8484-4476-A5E3-802EC6C34397" id="_DC8kOANlEe6ssOa6OKTjIg">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -2254,7 +2254,7 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
               </bpsim:UnitCost>
             </bpsim:CostParameters>
           </bpsim:ElementParameters>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_61521014-8790-4DAC-8E3E-40721195B9A5" id="_1LGC5wNkEe6ssOa6OKTjIg">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_61521014-8790-4DAC-8E3E-40721195B9A5" id="_DC8kOQNlEe6ssOa6OKTjIg">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -2274,7 +2274,7 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
               </bpsim:UnitCost>
             </bpsim:CostParameters>
           </bpsim:ElementParameters>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_F8CBA186-60C1-489A-9512-A558D6A00684" id="_1LGC6ANkEe6ssOa6OKTjIg">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_F8CBA186-60C1-489A-9512-A558D6A00684" id="_DC8kOgNlEe6ssOa6OKTjIg">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -2294,7 +2294,7 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
               </bpsim:UnitCost>
             </bpsim:CostParameters>
           </bpsim:ElementParameters>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_2A3F9959-9136-4660-BC6E-A3424850FE2B" id="_1LGC6QNkEe6ssOa6OKTjIg">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_2A3F9959-9136-4660-BC6E-A3424850FE2B" id="_DC8kOwNlEe6ssOa6OKTjIg">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -2314,34 +2314,14 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
               </bpsim:UnitCost>
             </bpsim:CostParameters>
           </bpsim:ElementParameters>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_96B83C4F-4E3A-46EC-B1F5-F1710DB01762" id="_1LGC6gNkEe6ssOa6OKTjIg">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_96B83C4F-4E3A-46EC-B1F5-F1710DB01762" id="_DC8kPANlEe6ssOa6OKTjIg">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
               </bpsim:ProcessingTime>
             </bpsim:TimeParameters>
           </bpsim:ElementParameters>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_A25F0C39-82DD-4A6A-A75A-C842B7207D9A" id="_1LGC6wNkEe6ssOa6OKTjIg">
-            <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
-              <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
-                <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
-              </bpsim:ProcessingTime>
-            </bpsim:TimeParameters>
-            <bpsim:ResourceParameters xsi:type="bpsim:ResourceParameters">
-              <bpsim:Availability xsi:type="bpsim:Parameter">
-                <bpsim:FloatingParameter value="0.0"/>
-              </bpsim:Availability>
-              <bpsim:Quantity xsi:type="bpsim:Parameter">
-                <bpsim:FloatingParameter value="0.0"/>
-              </bpsim:Quantity>
-            </bpsim:ResourceParameters>
-            <bpsim:CostParameters xsi:type="bpsim:CostParameters">
-              <bpsim:UnitCost xsi:type="bpsim:Parameter">
-                <bpsim:FloatingParameter value="0.0"/>
-              </bpsim:UnitCost>
-            </bpsim:CostParameters>
-          </bpsim:ElementParameters>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_BC464F8D-4BED-4EF1-8887-9D01CA81EF73" id="_1LGC7ANkEe6ssOa6OKTjIg">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_A25F0C39-82DD-4A6A-A75A-C842B7207D9A" id="_DC8kPQNlEe6ssOa6OKTjIg">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -2361,7 +2341,7 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
               </bpsim:UnitCost>
             </bpsim:CostParameters>
           </bpsim:ElementParameters>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_25678182-2281-45D0-9661-4689717CD6B5" id="_1LGC7QNkEe6ssOa6OKTjIg">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_BC464F8D-4BED-4EF1-8887-9D01CA81EF73" id="_DC8kPgNlEe6ssOa6OKTjIg">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -2381,7 +2361,7 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
               </bpsim:UnitCost>
             </bpsim:CostParameters>
           </bpsim:ElementParameters>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6" id="_1LGC7gNkEe6ssOa6OKTjIg">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_25678182-2281-45D0-9661-4689717CD6B5" id="_DC8kPwNlEe6ssOa6OKTjIg">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -2401,7 +2381,7 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
               </bpsim:UnitCost>
             </bpsim:CostParameters>
           </bpsim:ElementParameters>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_C303A43E-D02C-46F9-9820-7ABEC8CDFD05" id="_1LGC7wNkEe6ssOa6OKTjIg">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_D321AA4D-6A2B-40F7-B6DB-54D0D5185AC6" id="_DC8kQANlEe6ssOa6OKTjIg">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -2421,7 +2401,7 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
               </bpsim:UnitCost>
             </bpsim:CostParameters>
           </bpsim:ElementParameters>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_0981A2E4-79BE-473D-9AE4-394ACFEE7990" id="_1LGC8ANkEe6ssOa6OKTjIg">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_C303A43E-D02C-46F9-9820-7ABEC8CDFD05" id="_DC8kQQNlEe6ssOa6OKTjIg">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -2441,7 +2421,7 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
               </bpsim:UnitCost>
             </bpsim:CostParameters>
           </bpsim:ElementParameters>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC" id="_1LGC8QNkEe6ssOa6OKTjIg">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_0981A2E4-79BE-473D-9AE4-394ACFEE7990" id="_DC8kQgNlEe6ssOa6OKTjIg">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -2461,7 +2441,7 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
               </bpsim:UnitCost>
             </bpsim:CostParameters>
           </bpsim:ElementParameters>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_A038F37F-2E2A-47E2-B959-A056738D8396" id="_1LGC8gNkEe6ssOa6OKTjIg">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_D86A921A-796F-48BC-9B6D-BF6D7BC24BBC" id="_DC8kQwNlEe6ssOa6OKTjIg">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -2481,7 +2461,27 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
               </bpsim:UnitCost>
             </bpsim:CostParameters>
           </bpsim:ElementParameters>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_68F5D1A8-5105-42F9-9A01-10446200265D" id="_1LGC8wNkEe6ssOa6OKTjIg">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_A038F37F-2E2A-47E2-B959-A056738D8396" id="_DC8kRANlEe6ssOa6OKTjIg">
+            <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
+              <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
+                <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+            <bpsim:ResourceParameters xsi:type="bpsim:ResourceParameters">
+              <bpsim:Availability xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="0.0"/>
+              </bpsim:Availability>
+              <bpsim:Quantity xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="0.0"/>
+              </bpsim:Quantity>
+            </bpsim:ResourceParameters>
+            <bpsim:CostParameters xsi:type="bpsim:CostParameters">
+              <bpsim:UnitCost xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="0.0"/>
+              </bpsim:UnitCost>
+            </bpsim:CostParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_68F5D1A8-5105-42F9-9A01-10446200265D" id="_DC8kRQNlEe6ssOa6OKTjIg">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -2504,7 +2504,7 @@ kcontext.setVariable("pathPDF", result);]]></drools:script>
         </bpsim:Scenario>
       </bpsim:BPSimData>
     </bpmn2:extensionElements>
-    <bpmn2:source>_1LFbMANkEe6ssOa6OKTjIg</bpmn2:source>
-    <bpmn2:target>_1LFbMANkEe6ssOa6OKTjIg</bpmn2:target>
+    <bpmn2:source>_DC770ANlEe6ssOa6OKTjIg</bpmn2:source>
+    <bpmn2:target>_DC770ANlEe6ssOa6OKTjIg</bpmn2:target>
   </bpmn2:relationship>
 </bpmn2:definitions>
