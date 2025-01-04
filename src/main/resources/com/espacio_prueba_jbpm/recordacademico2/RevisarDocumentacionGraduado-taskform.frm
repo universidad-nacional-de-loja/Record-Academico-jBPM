@@ -481,7 +481,9 @@
                                         "cssProperties": {
                                             "outline": "2px solid #ffcc00",
                                             "outline-offset": "2px",
-                                            "font-size": "1.2em"
+                                            "font-size": "1.2em",
+                                            "color": "#000000",
+                                            "background-color": "#FFFFFF"
                                         }
                                     },
                                     {
@@ -489,7 +491,9 @@
                                         "cssProperties": {
                                             "outline": "2px solid #ffcc00",
                                             "outline-offset": "2px",
-                                            "font-size": "1.2em"
+                                            "font-size": "1.2em",
+                                            "color": "#000000",
+                                            "background-color": "#FFFFFF"
                                         }
                                     }
                                 ]
