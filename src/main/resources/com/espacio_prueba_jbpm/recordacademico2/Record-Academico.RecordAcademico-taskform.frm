@@ -372,7 +372,8 @@
         "style": "FLUID",
         "layoutProperties": {
             "color": "#000000",
-            "background-color": "#FFFFFF"
+            "background-color": "#FFFFFF",
+            "font-size": "10%"
         },
         "rows": [
             {
