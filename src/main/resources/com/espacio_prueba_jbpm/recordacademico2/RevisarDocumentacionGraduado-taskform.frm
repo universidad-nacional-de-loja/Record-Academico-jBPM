@@ -352,7 +352,9 @@
                     {
                         "span": "12",
                         "height": "12",
-                        "properties": {},
+                        "properties": {
+                            "aria-label": "Formulario para cargar documentos de Récord Académico"
+                        },
                         "rows": [],
                         "layoutComponents": [
                             {
