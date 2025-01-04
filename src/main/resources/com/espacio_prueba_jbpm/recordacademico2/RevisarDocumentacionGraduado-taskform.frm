@@ -291,11 +291,17 @@
                                 "parts": [
                                     {
                                         "partId": "TextBox",
-                                        "cssProperties": {}
+                                        "cssProperties": {
+                                            "outline": "2px solid #ffcc00",
+                                            "outline-offset": "2px"
+                                        }
                                     },
                                     {
                                         "partId": "Field Label",
-                                        "cssProperties": {}
+                                        "cssProperties": {
+                                            "outline": "2px solid #ffcc00",
+                                            "outline-offset": "2px"
+                                        }
                                     }
                                 ]
                             }
@@ -316,11 +322,17 @@
                                 "parts": [
                                     {
                                         "partId": "IntegerBox",
-                                        "cssProperties": {}
+                                        "cssProperties": {
+                                            "outline": "2px solid #ffcc00",
+                                            "outline-offset": "2px"
+                                        }
                                     },
                                     {
                                         "partId": "Field Label",
-                                        "cssProperties": {}
+                                        "cssProperties": {
+                                            "outline": "2px solid #ffcc00",
+                                            "outline-offset": "2px"
+                                        }
                                     }
                                 ]
                             }
@@ -347,7 +359,10 @@
                                 "parts": [
                                     {
                                         "partId": "Field Label",
-                                        "cssProperties": {}
+                                        "cssProperties": {
+                                            "outline": "2px solid #ffcc00",
+                                            "outline-offset": "2px"
+                                        }
                                     }
                                 ]
                             }
@@ -374,7 +389,10 @@
                                 "parts": [
                                     {
                                         "partId": "Field Label",
-                                        "cssProperties": {}
+                                        "cssProperties": {
+                                            "outline": "2px solid #ffcc00",
+                                            "outline-offset": "2px"
+                                        }
                                     }
                                 ]
                             }
@@ -401,7 +419,10 @@
                                 "parts": [
                                     {
                                         "partId": "Field Label",
-                                        "cssProperties": {}
+                                        "cssProperties": {
+                                            "outline": "2px solid #ffcc00",
+                                            "outline-offset": "2px"
+                                        }
                                     }
                                 ]
                             }
@@ -449,11 +470,17 @@
                                 "parts": [
                                     {
                                         "partId": "RadioGroup",
-                                        "cssProperties": {}
+                                        "cssProperties": {
+                                            "outline": "2px solid #ffcc00",
+                                            "outline-offset": "2px"
+                                        }
                                     },
                                     {
                                         "partId": "Field Label",
-                                        "cssProperties": {}
+                                        "cssProperties": {
+                                            "outline": "2px solid #ffcc00",
+                                            "outline-offset": "2px"
+                                        }
                                     }
                                 ]
                             }
@@ -480,11 +507,17 @@
                                 "parts": [
                                     {
                                         "partId": "TextBox",
-                                        "cssProperties": {}
+                                        "cssProperties": {
+                                            "outline": "2px solid #ffcc00",
+                                            "outline-offset": "2px"
+                                        }
                                     },
                                     {
                                         "partId": "Field Label",
-                                        "cssProperties": {}
+                                        "cssProperties": {
+                                            "outline": "2px solid #ffcc00",
+                                            "outline-offset": "2px"
+                                        }
                                     }
                                 ]
                             }
