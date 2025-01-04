@@ -294,14 +294,16 @@
                                         "partId": "TextBox",
                                         "cssProperties": {
                                             "outline": "2px solid #ffcc00",
-                                            "outline-offset": "2px"
+                                            "outline-offset": "2px",
+                                            "font-size": "1.2em"
                                         }
                                     },
                                     {
                                         "partId": "Field Label",
                                         "cssProperties": {
                                             "outline": "2px solid #ffcc00",
-                                            "outline-offset": "2px"
+                                            "outline-offset": "2px",
+                                            "font-size": "1.2em"
                                         }
                                     }
                                 ]
@@ -325,14 +327,16 @@
                                         "partId": "IntegerBox",
                                         "cssProperties": {
                                             "outline": "2px solid #ffcc00",
-                                            "outline-offset": "2px"
+                                            "outline-offset": "2px",
+                                            "font-size": "1.2em"
                                         }
                                     },
                                     {
                                         "partId": "Field Label",
                                         "cssProperties": {
                                             "outline": "2px solid #ffcc00",
-                                            "outline-offset": "2px"
+                                            "outline-offset": "2px",
+                                            "font-size": "1.2em"
                                         }
                                     }
                                 ]
@@ -362,7 +366,8 @@
                                         "partId": "Field Label",
                                         "cssProperties": {
                                             "outline": "2px solid #ffcc00",
-                                            "outline-offset": "2px"
+                                            "outline-offset": "2px",
+                                            "font-size": "1.2em"
                                         }
                                     }
                                 ]
@@ -392,7 +397,8 @@
                                         "partId": "Field Label",
                                         "cssProperties": {
                                             "outline": "2px solid #ffcc00",
-                                            "outline-offset": "2px"
+                                            "outline-offset": "2px",
+                                            "font-size": "1.2em"
                                         }
                                     }
                                 ]
@@ -422,7 +428,8 @@
                                         "partId": "Field Label",
                                         "cssProperties": {
                                             "outline": "2px solid #ffcc00",
-                                            "outline-offset": "2px"
+                                            "outline-offset": "2px",
+                                            "font-size": "1.2em"
                                         }
                                     }
                                 ]
@@ -473,14 +480,16 @@
                                         "partId": "RadioGroup",
                                         "cssProperties": {
                                             "outline": "2px solid #ffcc00",
-                                            "outline-offset": "2px"
+                                            "outline-offset": "2px",
+                                            "font-size": "1.2em"
                                         }
                                     },
                                     {
                                         "partId": "Field Label",
                                         "cssProperties": {
                                             "outline": "2px solid #ffcc00",
-                                            "outline-offset": "2px"
+                                            "outline-offset": "2px",
+                                            "font-size": "1.2em"
                                         }
                                     }
                                 ]
@@ -510,14 +519,16 @@
                                         "partId": "TextBox",
                                         "cssProperties": {
                                             "outline": "2px solid #ffcc00",
-                                            "outline-offset": "2px"
+                                            "outline-offset": "2px",
+                                            "font-size": "1.2em"
                                         }
                                     },
                                     {
                                         "partId": "Field Label",
                                         "cssProperties": {
                                             "outline": "2px solid #ffcc00",
-                                            "outline-offset": "2px"
+                                            "outline-offset": "2px",
+                                            "font-size": "1.2em"
                                         }
                                     }
                                 ]
